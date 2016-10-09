@@ -4,14 +4,7 @@
 site 'https://supermarket.getchef.com/api/v1'
 
 cookbook 'git'
-
-# cookbook 'chef-client'
-
-# cookbook 'apache2', '>= 1.0.0'
-
-# cookbook 'rvm',
-#   :git => 'https://github.com/fnichol/chef-rvm'
-
-# cookbook 'postgresql',
-#   :git => 'https://github.com/findsyou/cookbooks',
-#   :ref => 'postgresql-improvements'
+cookbook 'readline', '~> 0.0.5'
+cookbook 'ruby_build'
+cookbook 'rbenv', git: 'git://github.com/chourobin/chef-rbenv.git'
+cookbook 'postgresql'
