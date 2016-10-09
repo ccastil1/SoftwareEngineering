@@ -56,6 +56,7 @@ Vagrant.configure("2") do |config|
     inline: "sudo apt-get -y install libssl-dev zlib1g-dev"
   config.vm.provision "chef_solo" do |chef|
     chef.add_recipe "readline"
+    chef.add_recipe "nodejs"
     chef.add_recipe "ruby_build"
     chef.add_recipe "rbenv::vagrant"
     chef.add_recipe "rbenv::user"
