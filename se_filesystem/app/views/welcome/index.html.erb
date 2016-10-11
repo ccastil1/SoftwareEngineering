@@ -1,2 +1,104 @@
-<h1>Main page</h1>
-<p>Change me</p>
+<!doctype html>
+<html>
+<head>
+<script src="jquery-1.12.4.min.js"></script>
+<script src="sorttable.js"></script>
+<meta charset="UTF-8">
+<title>Software Engineering</title>
+</head>
+<style>
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #4aacf7;
+	border: 0.5px solid black;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: black;
+	font-weight: bold;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a:hover {
+	color: white;
+}
+
+table, th, td{border-bottom: 1px solid black; border-collapse: collapse; margin: 5px; padding: 10px;}
+	
+tr:hover {background-color: #C3C3C3;}	
+	
+button{cursor: pointer;}
+	
+#uploadButton {
+	background-color: white;
+	border-radius: 5px;
+	border:1px solid black;
+	display:inline-block;
+	color: black;
+	font-size:14px;
+	padding:10px 10px;
+	margin: 10px;
+}
+
+#headerRow {color: white; text-shadow: 0 0 10px black; background-color: #4aacf7; border: 1px solid black;}
+#headerRow a:hover {cursor: pointer;}
+#headerRow:hover {background: 4aacf7;}
+
+a:hover{cursor: pointer;}
+
+</style>
+
+<body>
+
+<ul>
+  <li><a>Logout</a></li>
+  <li><a>Help</a></li>
+</ul>
+
+<button id="uploadButton" type="button">Upload</button>
+<table class="searchable sortable" width="100%" style="margin: 0px;">
+  <tr id="headerRow">
+  	<td><a>File Name</a></td>
+    <td><a>Owner</a></td>
+    <td><a>Date Modified</a></td>
+    <td><input type="checkbox"></td>
+    <td><button type="button">Download</button></td>
+    <td><button type="button">Share</button></td>
+    <td><button type="button">Delete</button></td>
+  </tr>
+  <tr>
+    <td>Top Secret Files</td>
+	<td>John Doe</td>
+	<td>17 Septemeber 2015</td>
+    <td><input type="checkbox"></td>
+    <td><button type="button">Download</button></td>
+    <td><button type="button">Share</button></td>
+    <td><button type="button">Delete</button></td>
+  </tr>
+  <tr>
+    <td>Family Photos</td>
+    <td>Jane Doe</td>
+    <td>8 October 2016</td>
+   	<td><input type="checkbox"></td>
+    <td><button type="button">Download</button></td>
+    <td><button type="button">Share</button></td>
+    <td><button type="button">Delete</button></td>
+
+  </tr>
+
+</table>
+
+
+</body>
+</html>
