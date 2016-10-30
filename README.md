@@ -28,3 +28,16 @@
     and run `rails server -b 0.0.0.0`. Then, you should be able to load the
     root page at localhost:3000.
 
+
+## Master setup
+* Open up ports 22, 80, and 443 for outside access
+* Clone project repo to home directory of ubuntu user
+* Install ruby: `sudo apt-get ruby`
+* Install
+    [chef-solo](http://gettingstartedwithchef.com/first-steps-with-chef.html)
+* Install librarian-chef and `librarian-chef install` to download cookbooks
+* `sudo apt-get install sqlite libsqlite3-dev`
+* `sudo chef-solo -c solo.rb -j node.json`
+* cd into se_filesystem and install project dependencies: `bundle install`
+* Run `./bin/rails server -p 80 -b 0.0.0.0` to start the development server on
+    port 80. (This will be changed to a production grade server)
