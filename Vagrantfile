@@ -13,7 +13,7 @@ Vagrant.configure('2') do |config|
 
   config.vm.provision(
     'shell',
-    inline: 'sudo apt-get -y install libssl-dev zlib1g-dev'
+    inline: 'sudo apt-get update; sudo apt-get -y install libssl-dev zlib1g-dev'
   )
   config.vm.provision 'chef_solo' do |chef|
     chef.add_recipe 'readline'
