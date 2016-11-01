@@ -1,6 +1,6 @@
 class FilesController < ApplicationController
   def show
-    @file = SeFile.find(params[:id])
+    @file = SeFile.find_by(name: params[:name])
     render json: @file
   end
 end
