@@ -13,7 +13,11 @@ class FilesController < ApplicationController
   def remove
     @file = SeFile.find_by(name: params[:name])
     @file.delete
-    output = { :message => "success" }
+    if SeFile.exists?(@file)
+        output = { :message => "failure" }
+    else
+        output = { :message => "success" }
+    end
     render :json => output
   end
 end
