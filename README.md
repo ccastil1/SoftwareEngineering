@@ -41,3 +41,9 @@
 * cd into se_filesystem and install project dependencies: `bundle install`
 * Run `./bin/rails server -p 80 -b 0.0.0.0` to start the development server on
     port 80. (This will be changed to a production grade server)
+
+## Master git deployment setup
+* Clone bare git repository to master at ~/git_bare/ `git clone --bare
+    my_project my_project.git`
+* Copy `post-received-deploy` hook to `bare_repo.git/hooks/post-receive` and
+    `chmod +x` it.

@@ -1,0 +1,9 @@
+#!/bin/sh
+LIVE_REPO=~/SoftwareEngineering
+
+echo "Updating live repo"
+git --git-dir "$LIVE_REPO/.git" --work-tree "$LIVE_REPO" fetch live
+git --git-dir "$LIVE_REPO/.git" --work-tree "$LIVE_REPO" reset --hard "live/issue_2"
+echo "Live repo updated"
+
+# vim: set ft=sh: 
