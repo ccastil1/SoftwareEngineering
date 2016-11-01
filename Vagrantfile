@@ -15,6 +15,10 @@ Vagrant.configure('2') do |config|
     'shell',
     inline: 'sudo apt-get update; sudo apt-get -y install libssl-dev zlib1g-dev'
   )
+  config.vm.provision(
+    'shell',
+    inline: 'sudo mkdir /var/lib/se_app; sudo chown ubuntu:ubuntu /var/lib/se_app'
+  )
   config.vm.provision 'chef_solo' do |chef|
     chef.add_recipe 'readline'
     chef.add_recipe 'nodejs'
