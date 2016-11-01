@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get 'files/:name', to: 'files#show', as: :file
+  get 'files/', to: 'files#list', as: :fileall
 end
