@@ -1,4 +1,5 @@
 class FilesController < ApplicationController
+  protect_from_forgery with: :null_session
   def list
     @file = SeFile.all
     render :json => @file
