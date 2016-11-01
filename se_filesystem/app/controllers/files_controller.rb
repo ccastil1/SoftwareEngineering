@@ -13,14 +13,16 @@ class FilesController < ApplicationController
   def remove
     successstr = "success"
 
+    @file = SeFile.find_by(name: params[:name])
+    if @file == nil
+      output = { :message => "failure" }
+      render :json => output
+      return
+    end
+
     ActiveRecord::Base.transaction do
       # Remove entry from database    
-      @file = SeFile.find_by(name: params[:name])
-      if @file == nil
-        successstr = "failure"
-      else
-        @file.delete
-      end
+      @file.delete
       # Remove file
       File.delete("/var/lib/se_app/" + params[:name]) if File.exist?("/var/lib/se_app/" + params[:name])
 
