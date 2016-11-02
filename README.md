@@ -31,8 +31,17 @@
 ## How to deploy
 * Deployment works by pulling down the lastest version of the master from
     Github and deploying it to the main node. This is done with `cap production
-    deploy`
-
+    deploy` from within the vm.
+* Note: you must have the identity file for the server as well as your Github private key
+    added to your ssh agent in order to connect to the box. The server private
+    key is to access to server obviously, and the Github private key is to pull
+    down the most recent copy of master from Github.
+    To ssh into the vagrant machine, you must run `vagrant ssh -- -A`.
+    This forwards your ssh agent to the vagrant machine. Capistrano (cap)
+    forwards your ssh-agent to the remote server when it tries to connect,
+    hence why it can access the github repo.
+* The server should update automatically. If it crashes, you might have to
+    restart the puma server. (TODO: make this more robust)
 
 ## Master setup
 * Open up ports 22, 80, and 443 for outside access
@@ -49,5 +58,3 @@
     'unix:///home/ubuntu/apps/se_filesystem/shared/tmp/sockets/pumactl.sock' -S
     /home/ubuntu/apps/se_filesystem/shared/tmp/pids/puma.state`
     (Move this into an init script)
-
-
