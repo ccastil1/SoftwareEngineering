@@ -2,7 +2,7 @@
 lock '3.6.1'
 
 # Change these
-server '54.218.119.184', port: 3000, roles: [:web, :app, :db], primary: true
+server '54.218.119.184', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:ccastil1/SoftwareEngineering.git'
 set :application,     'se_filesystem'
