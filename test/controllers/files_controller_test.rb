@@ -10,7 +10,6 @@ class FilesControllerTest < ActionDispatch::IntegrationTest
     SeFile.create(name: name)
   end
 
-
   test 'get file works' do
     get file_url @test_file.name
     assert_response :success
@@ -29,5 +28,4 @@ class FilesControllerTest < ActionDispatch::IntegrationTest
     db_file_names = (SeFile.all.to_a.map { |o| o.name }).sort
     assert response_file_names == db_file_names
   end
-
 end
