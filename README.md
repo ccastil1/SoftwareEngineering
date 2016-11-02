@@ -28,6 +28,11 @@
     and run `rails server -b 0.0.0.0`. Then, you should be able to load the
     root page at localhost:3000.
 
+## How to deploy
+* Deployment works by pulling down the lastest version of the master from
+    Github and deploying it to the main node. This is done with `cap production
+    deploy`
+
 
 ## Master setup
 * Open up ports 22, 80, and 443 for outside access
@@ -44,3 +49,5 @@
     'unix:///home/ubuntu/apps/se_filesystem/shared/tmp/sockets/pumactl.sock' -S
     /home/ubuntu/apps/se_filesystem/shared/tmp/pids/puma.state`
     (Move this into an init script)
+
+
