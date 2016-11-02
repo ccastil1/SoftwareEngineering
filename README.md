@@ -22,11 +22,11 @@
         installs all the gem dependencies for a project.
 
 ## How to start rails server
-    The Rails server is hosted on port 3000. This port is forwarded from the
-    virtual machine to the host.
-    In order to start the server, cd into the project folder
-    and run `rails server -b 0.0.0.0`. Then, you should be able to load the
-    root page at localhost:3000.
+* The Rails server is hosted on port 3000. This port is forwarded from the
+virtual machine to the host.
+* In order to start the server, cd into the project folder
+and run `rails server -b 0.0.0.0`. Then, you should be able to load the
+root page at localhost:3000.
 
 ## How to deploy
 * Deployment works by pulling down the lastest version of the master from
