@@ -8,7 +8,7 @@ class FilesController < ApplicationController
     @file = SeFile.find_by(name: params[:name])
     render json: @file
   end
-
+  
   def upload
 
     #Need to make sure it will not overwrite if user does not have access
@@ -21,8 +21,8 @@ class FilesController < ApplicationController
       @file.update_attribute(:updated_at, DateTime.now)
 
       #write to file
-      File.open("../" + params[:name],"w") do |f|
-        f.write(params[:data])
+      File.open("../" + params[:name],"wb") do |f|
+        f << params[:data].read
       end
 
       render :text => "File Updated"
@@ -34,8 +34,8 @@ class FilesController < ApplicationController
       if @file.save
 
         #write to file
-        File.open("../" + params[:name],"w") do |f|
-          f.write(params[:data])
+        File.open("../" + params[:name],"wb") do |f|
+          f << params[:data].read
         end
 
         render :text => "File Created"
