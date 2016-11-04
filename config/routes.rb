@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get 'files/:name', to: 'files#show', as: :file
-  get 'files/', to: 'files#list', as: :fileall
+  get 'files/', to: 'files#list', as: :files
   post 'files/', to: 'files#upload'
+  delete 'files/:name', to: 'files#remove', as: :filedelete
 end

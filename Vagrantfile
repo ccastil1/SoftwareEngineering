@@ -9,11 +9,15 @@ Vagrant.configure('2') do |config|
   config.vm.box = 'ubuntu/xenial64'
   config.vm.network 'forwarded_port', guest: 3000, host: 3000
 
-  config.vm.synced_folder 'se_filesystem', '/home/ubuntu/se_filesystem'
+  config.vm.synced_folder '.', '/home/ubuntu/se_filesystem'
 
   config.vm.provision(
     'shell',
     inline: 'sudo apt-get update; sudo apt-get -y install libssl-dev zlib1g-dev'
+  )
+  config.vm.provision(
+    'shell',
+    inline: 'sudo mkdir /var/lib/se_app; sudo chown ubuntu:ubuntu /var/lib/se_app'
   )
   config.vm.provision 'chef_solo' do |chef|
     chef.add_recipe 'readline'
