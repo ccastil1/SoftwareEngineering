@@ -46,7 +46,7 @@ class FilesController < ApplicationController
       @file = SeFile.find_by(name: params[:name])
       @file.update_attribute(:updated_at, DateTime.now)
       #write to file
-      File.open("../" + params[:name],"wb") do |f|
+      File.open("/var/lib/se_app/" + params[:name],"wb") do |f|
         f << params[:data].read
       end
       render :text => "File Updated"
@@ -56,7 +56,7 @@ class FilesController < ApplicationController
       @file = SeFile.new(name: params[:name])
       if @file.save
         #write to file
-        File.open("../" + params[:name],"wb") do |f|
+        File.open("/var/lib/se_app/" + params[:name],"wb") do |f|
           f << params[:data].read
         end
         render :text => "File Created"
