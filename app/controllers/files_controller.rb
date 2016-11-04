@@ -11,12 +11,14 @@ class FilesController < ApplicationController
   end
 
   def remove
-    successstr = "success"
+    successstr = "success: File " + params[:name] + " successfully deleted!"
+    statusval = 200
 
     @file = SeFile.find_by(name: params[:name])
     if @file == nil
-      output = { :message => "failure" }
-      render :json => output
+      statusval = 500
+      output = { :message => "failure: File " + params[:name] + "does not exist in server database!" }
+      render :json => output, :status => statusval
       return
     end
 
@@ -28,13 +30,14 @@ class FilesController < ApplicationController
 
       if File.exist?("/var/lib/se_app" + params[:name])
         # Raise file exception if delete fails
-        successstr = "failure"
+        successstr = "failure: File " + params[:name] + " does not exist on server!"
+        statusval = 500
         raise Errno::ENOENT
       end
     end
 
     # Respond with success appropriately
     output = { :message => successstr }
-    render :json => output
+    render :json => output, :status => statusval
   end
 end
