@@ -39,13 +39,15 @@ class FilesController < ApplicationController
   end
 
   def upload
+    outputstr = "success: File " + params[:name] + " successfully uploaded!"
+    statusval = 200
 
     #If file already exists in database, update it
     if SeFile.exists?(name: params[:name])
-
       @file = SeFile.find_by(name: params[:name])
       @file.update_attribute(:updated_at, DateTime.now)
-      #write to file
+
+      #Replace the body of the file
       File.open("/var/lib/se_app/" + params[:name],"wb") do |f|
         f << params[:data].read
       end
@@ -53,17 +55,28 @@ class FilesController < ApplicationController
 
     else #If file doesn't exist in database, create it
 
-      @file = SeFile.new(name: params[:name])
-      if @file.save
-        #write to file
+      ActiveRecord::Base.transaction do
+        #Create a new SeFile instance and add it to the database
+        @file = SeFile.new(name: params[:name])
+        @file.save
+
+        #Create the file 
         File.open("/var/lib/se_app/" + params[:name],"wb") do |f|
           f << params[:data].read
         end
-        render :text => "File Created"
-      else
-        render :text => "File not uploaded."
+
+        #Raise exception if file is not created
+	if not File.exist?("/var/lib/se_app/" + params[:name])
+	  #Change output string and raise error
+	  outputstr = "failure: File " + params[:name] + "was not created!"
+	  statusval = 500
+	  raise Errno::ENOENT
+	end
       end
 
+      #output message and status
+      output = { :message => outputstr }
+      render :json => output, :status => statusval
     end
   end
 end
