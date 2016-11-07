@@ -35,4 +35,17 @@ class SeFileTest < ActiveSupport::TestCase
     updated_test_file.destroy
     assert_not File.exist? @test_file.attachment.path
   end
+
+  test 'file update' do
+    temp = generate_temporary_file
+    expected_updated_data = 'updated stuff'
+    new_temp = generate_temporary_file expected_updated_data
+    @test_file.attachment = temp
+    @test_file.save
+    @test_file.attachment = new_temp
+    @test_file.save
+    file_path = SeFile.find(@test_file.id).attachment.path
+    actual_updated_data = File.open(file_path).read
+    assert expected_updated_data == actual_updated_data
+  end
 end
