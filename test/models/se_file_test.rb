@@ -5,15 +5,21 @@ class SeFileTest < ActiveSupport::TestCase
     @test_file = SeFile.find_by name: 'test_file'
   end
 
+  def generate_temporary_file(data = nil)
+    file = Tempfile.new
+    data = ('a'..'z').to_a.sample(17).join if data.nil?
+    file.write data
+    file.rewind
+    file
+  end
+
   test 'filenames must be unique' do
     assert_raise(ActiveRecord::RecordInvalid) { @test_file.dup.save! }
   end
 
   test 'file creation' do
     data = 'random stuff'
-    temp = Tempfile.new
-    temp.write data
-    temp.rewind
+    temp = generate_temporary_file data
     @test_file.attachment = temp
     @test_file.save
     updated_file = File.open SeFile.find(@test_file.id).attachment.path
@@ -21,9 +27,7 @@ class SeFileTest < ActiveSupport::TestCase
   end
 
   test 'file deletion' do
-    temp = Tempfile.new
-    temp.write 'test data'
-    temp.rewind
+    temp = generate_temporary_file
     @test_file.attachment = temp
     @test_file.save
     updated_test_file = SeFile.find @test_file.id
