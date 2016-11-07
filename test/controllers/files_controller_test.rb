@@ -7,7 +7,7 @@ class FilesControllerTest < ActionDispatch::IntegrationTest
 
   def create_random_file
     name = ('a'..'z').to_a.shuffle[0..30].join
-    SeFile.create(name: name)
+    SeFile.create name: name, attachment: generate_temporary_file
   end
 
   test 'get file works' do
@@ -21,11 +21,18 @@ class FilesControllerTest < ActionDispatch::IntegrationTest
   test 'get files works' do
     file1 = create_random_file
     file2 = create_random_file
-    get files_url 
+    get files_url
     assert_response :success
     r = JSON.parse response.body
     response_file_names = (r.map { |o| o["name"] }).sort
     db_file_names = (SeFile.all.to_a.map { |o| o.name }).sort
     assert response_file_names == db_file_names
+  end
+
+  test 'file downloads successfully' do
+    file = create_random_file
+    data = File.open(file.attachment.path).read
+    get file_download_url file.name
+    assert data == response.body
   end
 end

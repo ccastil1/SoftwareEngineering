@@ -10,6 +10,11 @@ class FilesController < ApplicationController
     render json: @file
   end
 
+  def download
+    file = SeFile.find_by name: params[:name]
+    send_file file.attachment.path
+  end
+
   def remove
     successstr = "success: File " + params[:name] + " successfully deleted!"
     statusval = 200
@@ -23,7 +28,7 @@ class FilesController < ApplicationController
     end
 
     ActiveRecord::Base.transaction do
-      # Remove entry from database    
+      # Remove entry from database
       @file.delete
       # Remove file
       File.delete("/var/lib/se_app/" + params[:name]) if File.exist?("/var/lib/se_app/" + params[:name])

@@ -5,14 +5,6 @@ class SeFileTest < ActiveSupport::TestCase
     @test_file = SeFile.find_by name: 'test_file'
   end
 
-  def generate_temporary_file(data = nil)
-    file = Tempfile.new
-    data = ('a'..'z').to_a.sample(17).join if data.nil?
-    file.write data
-    file.rewind
-    file
-  end
-
   test 'filenames must be unique' do
     assert_raise(ActiveRecord::RecordInvalid) { @test_file.dup.save! }
   end
