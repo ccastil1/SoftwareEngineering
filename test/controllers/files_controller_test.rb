@@ -45,4 +45,18 @@ class FilesControllerTest < ActionDispatch::IntegrationTest
     get file_download_url 'whatever_file'
     assert_response 400
   end
+
+  test 'delete file works' do
+    file = create_random_file
+    delete file_url file.name 
+    assert_response 200
+    assert_not SeFile.exists?(file.id)
+  end
+
+  test 'delete non-existant file' do
+    filename = 'thisisnotarealfile' 
+    delete file_url filename 
+    assert_response 400
+    assert_not SeFile.exists?(name: filename)
+  end
 end
