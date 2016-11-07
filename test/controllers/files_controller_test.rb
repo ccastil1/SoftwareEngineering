@@ -18,6 +18,11 @@ class FilesControllerTest < ActionDispatch::IntegrationTest
     assert_equal r["name"], @test_file.name
   end
 
+  test 'get missing file returns 400' do
+    get file_url 'missing_file'
+    assert_response 400
+  end
+
   test 'get files works' do
     file1 = create_random_file
     file2 = create_random_file

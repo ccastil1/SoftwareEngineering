@@ -7,7 +7,11 @@ class FilesController < ApplicationController
 
   def show
     @file = SeFile.find_by(name: params[:name])
-    render json: @file
+    if @file.nil?
+      render json: { message: "File #{params[:name]} not found" }, status: 400
+    else
+      render json: @file
+    end
   end
 
   def download
