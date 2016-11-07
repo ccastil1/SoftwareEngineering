@@ -12,7 +12,11 @@ class FilesController < ApplicationController
 
   def download
     file = SeFile.find_by name: params[:name]
-    send_file file.attachment.path
+    if file.nil?
+      render json: { message: "File #{params[:name]} not found" }, status: 400
+    else
+      send_file file.attachment.path
+    end
   end
 
   def remove

@@ -35,4 +35,9 @@ class FilesControllerTest < ActionDispatch::IntegrationTest
     get file_download_url file.name
     assert data == response.body
   end
+
+  test 'missing file download returns 400' do
+    get file_download_url 'whatever_file'
+    assert_response 400
+  end
 end
