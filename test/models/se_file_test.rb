@@ -19,4 +19,16 @@ class SeFileTest < ActiveSupport::TestCase
     updated_file = File.open SeFile.find(@test_file.id).attachment.path
     assert updated_file.read == data
   end
+
+  test 'file deletion' do
+    temp = Tempfile.new
+    temp.write 'test data'
+    temp.rewind
+    @test_file.attachment = temp
+    @test_file.save
+    updated_test_file = SeFile.find @test_file.id
+    assert File.exist? updated_test_file.attachment.path
+    updated_test_file.destroy
+    assert_not File.exist? @test_file.attachment.path
+  end
 end
