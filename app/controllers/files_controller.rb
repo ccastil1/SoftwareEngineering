@@ -7,7 +7,20 @@ class FilesController < ApplicationController
 
   def show
     @file = SeFile.find_by(name: params[:name])
-    render json: @file
+    if @file.nil?
+      render json: { message: "File #{params[:name]} not found" }, status: 400
+    else
+      render json: @file
+    end
+  end
+
+  def download
+    file = SeFile.find_by name: params[:name]
+    if file.nil?
+      render json: { message: "File #{params[:name]} not found" }, status: 400
+    else
+      send_file file.attachment.path
+    end
   end
 
   def remove
@@ -23,7 +36,7 @@ class FilesController < ApplicationController
     end
 
     ActiveRecord::Base.transaction do
-      # Remove entry from database    
+      # Remove entry from database
       @file.delete
       # Remove file
       File.delete("/var/lib/se_app/" + params[:name]) if File.exist?("/var/lib/se_app/" + params[:name])

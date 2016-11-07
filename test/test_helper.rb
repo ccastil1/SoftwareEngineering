@@ -7,4 +7,11 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def generate_temporary_file(data = nil)
+    file = Tempfile.new
+    data = ('a'..'z').to_a.sample(17).join if data.nil?
+    file.write data
+    file.rewind
+    file
+  end
 end
