@@ -48,17 +48,19 @@ class FilesController < ApplicationController
   def upload
     outputstr = "success: File " + params[:name] + " successfully uploaded!"
     statusval = 200
+    puts params[:name]
+    puts params[:data]
 
     #If file already exists in database, update it
-    if SeFile.exists?(name: params[:name])
+    if SeFile.exists?(name: params[:name]) and params[:data].present?
       @file = SeFile.find_by(name: params[:name])
       @file.attachment = params[:data]
       @file.save
 
       outputstr = "success: File " + params[:name] + " successfully uploaded!"
 
-    else #If file doesn't exist in database, create it
-
+    #If file doesn't exist in database, create it
+    elsif params[:data].present?
       #Create a new SeFile instance and add it to the database
       @file = SeFile.new(name: params[:name])
       @file.attachment = params[:data]
@@ -68,10 +70,10 @@ class FilesController < ApplicationController
 
     #Raise exception if file is not created
 
-    if not SeFile.exists?(name: params[:name])
+    if not SeFile.exists?(name: params[:name]) or not params[:data].present?
       #Change output string and raise error
       outputstr = "failure: File " + params[:name] + "was not uploaded!"
-      statusval = 500
+      statusval = 400
     end
 
     #output message and status
