@@ -48,8 +48,6 @@ class FilesController < ApplicationController
   def upload
     outputstr = "success: File " + params[:name] + " successfully uploaded!"
     statusval = 200
-    puts params[:name]
-    puts params[:data]
 
     #If file already exists in database, update it
     if SeFile.exists?(name: params[:name]) and params[:data].present?
