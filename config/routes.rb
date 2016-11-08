@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'files/:name', to: 'files#show', as: :file
   get 'files/', to: 'files#list', as: :files
+  post 'files/', to: 'files#upload', as: :file_upload
   get 'files/download/:name', to: 'files#download', as: :file_download
   delete 'files/:name', to: 'files#remove', as: :filedelete
 end
