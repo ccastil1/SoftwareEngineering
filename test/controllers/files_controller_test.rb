@@ -10,6 +10,10 @@ class FilesControllerTest < ActionDispatch::IntegrationTest
     SeFile.create name: name, attachment: generate_temporary_file
   end
 
+  test 'post file works' do
+    post file_upload_url, :data => fixture_file_upload('files/test.txt'), :name => "testFile.txt"
+  end
+
   test 'get file works' do
     get file_url @test_file.name
     assert_response :success
