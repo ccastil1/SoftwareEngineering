@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'welcome/index'
+  get 'welcome/show/:id', to: "welcome#show", as: :welcome_show
   root 'welcome#index'
 
   get 'files/:name', to: 'files#show', as: :file

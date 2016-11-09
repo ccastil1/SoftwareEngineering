@@ -1,16 +1,16 @@
 class WelcomeController < ApplicationController
-  def index
+def index
         @files = SeFile.all
         @newFile = SeFile.new
-  end
+end
 
 def show
-  @file = SeFile.find(params[:id])
-
-  respond_to do |format|
-    format.html # show.html.erb
-    format.xml  { render :xml => @file }
-  end
+    @file = SeFile.find(params[:id])
+    #  if @file.nil?
+    #   render json: { message: "File #{params[:id]} not found" }, status: 400
+    # else
+    #   render show.html.erb
+    # end
 end
 
 def destroy
@@ -35,7 +35,6 @@ def destroy
     render :json => output, :status => statusval
   end
 end
-
 
 def create
   @file = SeFile.new(params[:name])

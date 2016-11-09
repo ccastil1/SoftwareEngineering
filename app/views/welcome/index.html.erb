@@ -36,7 +36,7 @@
 
     tr:hover {background-color: #C3C3C3;}
 
-    button{cursor: pointer;}
+    button{cursor: pointer; text-decoration: none;}
 
     #uploadButton {
         background-color: white;
@@ -84,7 +84,7 @@
     <% @files.each do |file| %>
     
     <tr>
-        <td><%= file.name %></td>
+        <td><%= link_to file.name, welcome_show_url(file) %></td>
         <td><%= file.updated_at %></td>
          <td><button type="button"><%= link_to 'Download', file_download_url(:name => file.name) , :method => :get %></button</td>
         <td><button type="button"><%= link_to 'Delete', filedelete_url(:name => file.name) , :method => :delete %></button</td>      

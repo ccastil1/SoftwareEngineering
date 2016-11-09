@@ -50,40 +50,12 @@ def post_params
 
 end  
 
-
-
   def upload
     uploaded_file = SeFile.new post_params
     file_name = uploaded_file.name
     uploaded_file.save
     outputstr = "success: File " + file_name + " successfully uploaded!"
     statusval = 200
-
-    #If file already exists in database, update it
-    # if SeFile.exists?(name: params[:name]) and params[:data].present?
-    #   @file = SeFile.find_by(name: params[:name])
-    #   @file.attachment = params[:data]
-    #   @file.save
-
-    #   outputstr = "success: File " + params[:name] + " successfully uploaded!"
-
-    # #If file doesn't exist in database, create it
-    # elsif params[:data].present?
-    #   #Create a new SeFile instance and add it to the database
-    #   @file = SeFile.new(name: params[:name])
-    #   @file.attachment = params[:data]
-    #   @file.save
-
-    # end
-
-    #Raise exception if file is not created
-
-  #   if not SeFile.exists?(name: file_name) or not params[:data].present?
-  #     #Change output string and raise error
-  #     outputstr = "failure: File " + file_name + "was not uploaded!"
-  #     statusval = 400
-  #   end
-
      #output message and status
      output = { :message => outputstr }
      render :json => output, :status => statusval
