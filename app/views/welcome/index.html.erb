@@ -55,8 +55,11 @@
 
     a:hover{cursor: pointer;}
 
+    .uploadArea {border: 1px solid black; margin: 3px; padding: 10px; border-radius: 10px; width: 30%;}
+
 </style>
-<div>
+<div class="uploadArea">
+<h3>Upload: </h3>
 <%= form_for(@newFile, {:url => file_upload_url}) do |file| %>
   <p>
     <%= file.label :name %><br />
@@ -87,8 +90,8 @@
     <tr>
         <td><%= link_to file.name, welcome_show_url(file) %></td>
         <td><%= file.updated_at %></td>
-         <td><button type="button"><%= link_to 'Download', file_download_url(:name => file.name) , :method => :get %></button</td>
-        <td><button type="button"><%= link_to 'Delete', filedelete_url(:name => file.name) , :method => :delete %></button</td>      
+        <td><%= link_to 'Download', file_download_url(:name => file.name) , :method => :get %></td>
+        <td><%= link_to 'Delete', filedelete_url(:name => file.name) , :method => :delete %></td>      
     </tr>
     <% end %>
 
