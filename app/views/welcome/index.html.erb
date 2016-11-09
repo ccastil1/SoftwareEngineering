@@ -1,10 +1,8 @@
-<!doctype html>
-<html>
+
 <head>
-    <script src="jquery-1.12.4.min.js"></script>
-    <script src="sorttable.js"></script>
     <meta charset="UTF-8">
     <title>Software Engineering</title>
+
 </head>
 <style>
 
@@ -58,39 +56,42 @@
     a:hover{cursor: pointer;}
 
 </style>
+<div>
+<%= form_for(@newFile, {:url => file_upload_url}) do |file| %>
+  <p>
+    <%= file.label :name %><br />
+    <%= file.text_field :name %>
+    <%= file.label :attachment %><br />
+    <%= file.file_field :attachment %>
 
-<body>
+  </p>
 
-<ul></ul>
-</ul>
+  <p>
+    <%= file.submit "Create" %>
+  </p>
+<% end %>
+</div>
 
 <button id="uploadButton" type="button">Upload</button>
-<table class="searchable sortable" width="100%" style="margin: 0px;">
+<table width="100%" style="margin: 0px;">
     <tr id="headerRow">
         <td><a>File Name</a></td>
-        <td><a>Owner</a></td>
         <td><a>Date Modified</a></td>
         <td>&nbsp</td>        
         <td>&nbsp</td>        
     </tr>
-    <tr>
-        <td>Top Secret Files</td>
-        <td>John Doe</td>
-        <td>17 Septemeber 2015</td>
-        <td><button type="button">Download</button></td>
-        <td><button type="button">Delete</button></td>
-    </tr>
-    <tr>
-        <td>Family Photo Album</td>
-        <td>Jane Doe</td>
-        <td>8 October 2016</td>
-        <td><button type="button">Download</button></td>        
-        <td><button type="button">Delete</button></td>
 
+    <% @files.each do |file| %>
+    
+    <tr>
+        <td><%= file.name %></td>
+        <td><%= file.updated_at %></td>
+         <td><button type="button"><%= link_to 'Download', file_download_url(:name => file.name) , :method => :get %></button</td>
+        <td><button type="button"><%= link_to 'Delete', filedelete_url(:name => file.name) , :method => :delete %></button</td>      
     </tr>
+    <% end %>
 
 </table>
 
 
-</body>
-</html>
+
