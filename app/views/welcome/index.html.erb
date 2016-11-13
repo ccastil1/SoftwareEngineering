@@ -81,18 +81,19 @@
     <tr id="headerRow">
         <td><a>File Name</a></td>
         <td><a>Date Modified</a></td>
-        <td>&nbsp</td>        
-        <td>&nbsp</td>        
+        <td>&nbsp</td>
+        <td>&nbsp</td>
     </tr>
 
     <% @files.each do |file| %>
-    
+
     <tr>
         <td><%= link_to file.name, welcome_show_url(file) %></td>
         <td><%= file.updated_at %></td>
         <td><%= link_to 'Download', file_download_url(:name => file.name) , :method => :get %></td>
-        <td><%= link_to 'Delete', filedelete_url(:name => file.name) , :method => :delete %></td>      
+        <td><%= link_to 'Delete', filedelete_url(:name => file.name) , :method => :delete %></td>
     </tr>
+    This is some example text
     <% end %>
 
 </table>
