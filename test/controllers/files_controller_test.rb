@@ -11,10 +11,10 @@ class FilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'post file works' do
-    post file_upload_url, se_file: {
-      name: 'hi',
-      attachment: fixture_file_upload('files/test.txt')
-    }
+    post file_upload_url,
+         params: {
+           se_file: {name: 'hi', attachment: fixture_file_upload('files/test.txt')}
+         }
   end
 
   test 'post missing file returns 400' do
@@ -23,7 +23,7 @@ class FilesControllerTest < ActionDispatch::IntegrationTest
         name: 'testFile.txt'
       }
     }
-    post file_upload_url, params
+    post file_upload_url, params: params
     assert_response 400
   end
 
@@ -34,7 +34,7 @@ class FilesControllerTest < ActionDispatch::IntegrationTest
         attachment: fixture_file_upload('files/empty.txt')
       }
     }
-    post file_upload_url, params
+    post file_upload_url, params: params
     assert_response 400
   end
 
