@@ -18,12 +18,23 @@ class FilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'post missing file returns 400' do
-    post file_upload_url, :name => "testFile.txt"
+    params = {
+      se_file: {
+        name: 'testFile.txt'
+      }
+    }
+    post file_upload_url, params
     assert_response 400
   end
 
   test 'post empty file returns 400' do
-    post file_upload_url, :data => fixture_file_upload('files/empty.txt'), :name => "testFile.txt"
+    params = {
+      se_file: {
+        name: 'testFile.txt',
+        attachment: fixture_file_upload('files/empty.txt')
+      }
+    }
+    post file_upload_url, params
     assert_response 400
   end
 
