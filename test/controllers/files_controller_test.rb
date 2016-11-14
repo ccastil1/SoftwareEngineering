@@ -6,7 +6,7 @@ class FilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   def create_random_file
-    name = ('a'..'z').to_a.shuffle[0..30].join
+    name = ('a'..'z').to_a.sample(31).join
     SeFile.create name: name, attachment: generate_temporary_file
   end
 
@@ -42,8 +42,8 @@ class FilesControllerTest < ActionDispatch::IntegrationTest
     get file_url @test_file.name
     assert_response :success
     r = JSON.parse(response.body)
-    assert_equal r["id"], @test_file.id
-    assert_equal r["name"], @test_file.name
+    assert_equal r['id'], @test_file.id
+    assert_equal r['name'], @test_file.name
   end
 
   test 'get missing file returns 400' do
@@ -52,13 +52,13 @@ class FilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'get files works' do
-    file1 = create_random_file
-    file2 = create_random_file
+    create_random_file
+    create_random_file
     get files_url
     assert_response :success
     r = JSON.parse response.body
-    response_file_names = (r.map { |o| o["name"] }).sort
-    db_file_names = (SeFile.all.to_a.map { |o| o.name }).sort
+    response_file_names = (r.map { |o| o['name'] }).sort
+    db_file_names = SeFile.all.to_a.map(&:name).sort
     assert response_file_names == db_file_names
   end
 
@@ -76,14 +76,14 @@ class FilesControllerTest < ActionDispatch::IntegrationTest
 
   test 'delete file works' do
     file = create_random_file
-    delete file_url file.name 
+    delete file_url file.name
     assert_response 200
     assert_not SeFile.exists?(file.id)
   end
 
   test 'delete non-existant file' do
-    filename = 'thisisnotarealfile' 
-    delete file_url filename 
+    filename = 'thisisnotarealfile'
+    delete file_url filename
     assert_response 400
     assert_not SeFile.exists?(name: filename)
   end
