@@ -24,7 +24,7 @@ class FilesController < ApplicationController
   end
 
   def remove
-    successstr = "failure: File " + params[:name] + "does not exist in server database!" 
+    successstr = "failure: File " + params[:name] + "does not exist in server database!"
     statusval = 400
 
     file = SeFile.find_by(name: params[:name])
@@ -47,17 +47,21 @@ class FilesController < ApplicationController
 
 def post_params
   params.require(:se_file).permit(:name, :attachment)
-
-end  
+end
 
   def upload
     uploaded_file = SeFile.new post_params
     file_name = uploaded_file.name
     uploaded_file.save
-    outputstr = "success: File " + file_name + " successfully uploaded!"
-    statusval = 200
-     #output message and status
-     output = { :message => outputstr }
-     render :json => output, :status => statusval
-   end
+
+    if post_params[:attachment].nil? || post_params[:attachment].size.zero?
+      status_code = 400
+      message = 'Upload failure: file attachment cannot be empty'
+    else
+      message = "Upload success: File #{file_name} successfully uploaded!"
+      status_code = 200
+    end
+
+    render json: { message: message }, status: status_code
+  end
 end
