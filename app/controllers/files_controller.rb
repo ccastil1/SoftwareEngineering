@@ -56,7 +56,10 @@ end
 
     if post_params[:attachment].nil? || post_params[:attachment].size.zero?
       status_code = 400
-      message = 'Upload failure: file attachment cannot be empty'
+      message = 'Upload failure: File attachment cannot be empty.'
+    elsif post_params[:name].blank?
+      status_code = 400
+      message = 'Upload failure: Filename cannot be empty.'
     else
       message = "Upload success: File #{file_name} successfully uploaded!"
       status_code = 200
