@@ -1,4 +1,7 @@
-# SoftwareEngineering
+# SoftwareEngineering 
+
+[![Build Status](https://travis-ci.org/ccastil1/SoftwareEngineering.svg?branch=master)](https://travis-ci.org/ccastil1
+/SoftwareEngineering)
 
 ## Installation process
 * Install [vagrant](https://www.vagrantup.com/downloads.html) and [ruby](https://www.ruby-lang.org/en/documentation/installation/)
