@@ -1,2116 +1,0 @@
-
-public/500.html,0
-
-public/404.html,0
-
-public/422.html,0
-
-bin/setup,33
-def system!(*args)system!9,173
-
-bin/spring,0
-
-bin/rails,0
-
-bin/rake,0
-
-bin/bundle,0
-
-bin/update,33
-def system!(*args)system!9,173
-
-app/controllers/application_controller.rb,79
-class ApplicationController < ActionController::BaseApplicationController1,0
-
-app/controllers/files_controller.rb,231
-class FilesController < ApplicationControllerFilesController1,0
-  def listlist3,89
-  def showshow8,156
-  def downloaddownload17,362
-  def removeremove26,580
-def post_paramspost_params48,1184
-  def uploadupload53,1262
-
-app/controllers/welcome_controller.rb,193
-class WelcomeController < ApplicationControllerWelcomeController1,0
-def indexindex2,48
-def showshow7,121
-def destroydestroy16,322
-def createcreate39,930
-def downloaddownload56,1408
-
-app/channels/application_cable/connection.rb,112
-module ApplicationCableApplicationCable1,0
-  class Connection < ActionCable::Connection::BaseConnection2,24
-
-app/channels/application_cable/channel.rb,103
-module ApplicationCableApplicationCable1,0
-  class Channel < ActionCable::Channel::BaseChannel2,24
-
-app/assets/javascripts/application.js,0
-
-app/assets/javascripts/cable.js,0
-
-app/assets/config/manifest.js,0
-
-app/mailers/application_mailer.rb,67
-class ApplicationMailer < ActionMailer::BaseApplicationMailer1,0
-
-app/helpers/files_helper.rb,35
-module FilesHelperFilesHelper1,0
-
-app/helpers/welcome_helper.rb,39
-module WelcomeHelperWelcomeHelper1,0
-
-app/helpers/application_helper.rb,47
-module ApplicationHelperApplicationHelper1,0
-
-app/jobs/application_job.rb,58
-class ApplicationJob < ActiveJob::BaseApplicationJob1,0
-
-app/models/se_file.rb,44
-class SeFile < ApplicationRecordSeFile1,0
-
-app/models/application_record.rb,67
-class ApplicationRecord < ActiveRecord::BaseApplicationRecord1,0
-
-cookbooks/yum-epel/attributes/epel-testing-source.rb,0
-
-cookbooks/yum-epel/attributes/epel-debuginfo.rb,0
-
-cookbooks/yum-epel/attributes/default.rb,0
-
-cookbooks/yum-epel/attributes/epel-testing-debuginfo.rb,0
-
-cookbooks/yum-epel/attributes/epel-source.rb,0
-
-cookbooks/yum-epel/attributes/epel.rb,0
-
-cookbooks/yum-epel/attributes/epel-testing.rb,0
-
-cookbooks/yum-epel/recipes/default.rb,0
-
-cookbooks/windows/libraries/version.rb,185
-module WindowsWindows26,793
-  class VersionVersion27,808
-    def initializeinitialize133,10083
-    def sm_serverr2sm_serverr2190,12671
-    def get_os_infoget_os_info195,12853
-
-cookbooks/windows/libraries/windows_helper.rb,836
-module WindowsWindows24,775
-  module HelperHelper25,790
-    def win_friendly_path(path)win_friendly_path32,1303
-    def locate_sysnative_cmd(cmd)locate_sysnative_cmd40,1642
-    def value_for_feature_provider(provider_hash)value_for_feature_provider54,2144
-    def win_versionwin_version61,2430
-    def as_uri(source)as_uri66,2549
-    def cached_file(source, checksum = nil, windows_path = true)cached_file75,2878
-    def expand_env_vars(path)expand_env_vars96,3629
-    def is_package_installed?(package_name) # rubocop:disable Style/PredicateNameis_package_installed?106,4055
-    def installed_packagesinstalled_packages110,4194
-    def extract_installed_packages_from_key(hkey = ::Win32::Registry::HKEY_LOCAL_MACHINE, desired = ::Win32::Registry::Constants::KEY_READ)extract_installed_packages_from_key129,5385
-
-cookbooks/windows/libraries/registry_helper.rb,1080
-module WindowsWindows30,990
-  module RegistryHelperRegistryHelper31,1005
-    def get_hive_name(path)get_hive_name34,1122
-    def get_hive(path)get_hive50,1515
-    def unload_hive(path)unload_hive71,2099
-    def set_value(mode, path, values, type = nil)set_value83,2382
-    def get_value(path, value)get_value129,3804
-    def get_values(path)get_values144,4211
-    def delete_value(path, values)delete_value161,4699
-    def create_key(path)create_key179,5383
-    def value_exists?(path, value)value_exists?186,5608
-    def key_exists?(path, load_hive = false)key_exists?212,6333
-    def get_user_hive_location(sid)get_user_hive_location235,6962
-    def resolve_user_to_sid(username)resolve_user_to_sid245,7283
-    def hive_loaded?(path)hive_loaded?260,7646
-    def user_hive?(hive)user_hive?273,7928
-    def get_reg_path_info(path)get_reg_path_info277,8006
-    def load_user_hive(hive, reg_path, user_hive)load_user_hive293,8519
-    def ensure_hive_unloaded(hive_loaded = false)ensure_hive_unloaded338,10429
-module RegistryRegistry347,10626
-
-cookbooks/windows/libraries/feature_base.rb,522
-class ChefChef1,0
-  class ProviderProvider2,11
-    class WindowsFeatureWindowsFeature3,28
-      module BaseBase4,53
-        def action_installaction_install5,71
-        def action_removeaction_remove15,425
-        def action_deleteaction_delete25,769
-        def install_feature(_name)install_feature35,1115
-        def remove_feature(_name)remove_feature39,1252
-        def delete_feature(_name)delete_feature43,1387
-        def installed?installed?47,1522
-        def available?available?51,1644
-
-cookbooks/windows/libraries/powershell_helper.rb,218
-module PowershellPowershell23,722
-  module HelperHelper24,740
-    def powershell_installed?powershell_installed?27,791
-    def interpreterinterpreter31,861
-    def powershell_versionpowershell_version42,1342
-
-cookbooks/windows/libraries/windows_package.rb,983
-class ChefChef12,364
-  class ProviderProvider13,375
-    class WindowsCookbookPackage < Chef::Provider::LWRPBase # ~FC058WindowsCookbookPackage14,392
-      def removing_package?removing_package?57,2091
-      def expand_options(options)expand_options69,2494
-      def load_current_resourceload_current_resource77,2743
-      def current_installed_versioncurrent_installed_version89,3124
-      def candidate_versioncandidate_version97,3380
-      def install_package(_name, _version)install_package103,3512
-      def remove_package(_name, _version)remove_package111,4132
-      def install_command_templateinstall_command_template128,4952
-      def unattended_installation_flagsunattended_installation_flags138,5229
-      def installer_typeinstaller_type155,5597
-class ChefChef189,6819
-  class ResourceResource190,6830
-    class WindowsCookbookPackage < Chef::Resource::LWRPBaseWindowsCookbookPackage191,6847
-      def initialize(*args)initialize218,8082
-
-cookbooks/windows/libraries/matchers.rb,2425
-  def create_windows_certificate(resource_name)create_windows_certificate39,1336
-  def delete_windows_certificate(resource_name)delete_windows_certificate64,2164
-  def add_acl_to_windows_certificate(resource_name)add_acl_to_windows_certificate90,3111
-  def install_windows_package(resource_name)install_windows_package119,4113
-  def remove_windows_package(resource_name)remove_windows_package147,5020
-  def install_windows_feature(resource_name)install_windows_feature175,5930
-  def remove_windows_feature(resource_name)remove_windows_feature200,6703
-  def delete_windows_feature(resource_name)delete_windows_feature225,7474
-  def create_windows_task(resource_name)create_windows_task251,8259
-  def disable_windows_task(resource_name)disable_windows_task276,9010
-  def enable_windows_task(resource_name)enable_windows_task301,9759
-  def delete_windows_task(resource_name)delete_windows_task326,10506
-  def run_windows_task(resource_name)run_windows_task351,11237
-  def change_windows_task(resource_name)change_windows_task376,11978
-  def add_windows_path(resource_name)add_windows_path401,12724
-  def remove_windows_path(resource_name)remove_windows_path426,13480
-  def set_windows_pagefile(resource_name)set_windows_pagefile453,14310
-  def unzip_windows_zipfile_to(resource_name)unzip_windows_zipfile_to480,15215
-  def zip_windows_zipfile_to(resource_name)zip_windows_zipfile_to506,16004
-  def create_windows_shortcut(resource_name)create_windows_shortcut511,16181
-  def create_windows_auto_run(resource_name)create_windows_auto_run515,16320
-  def remove_windows_auto_run(resource_name)remove_windows_auto_run519,16459
-  def create_windows_printer(resource_name)create_windows_printer523,16598
-  def delete_windows_printer(resource_name)delete_windows_printer527,16735
-  def create_windows_printer_port(resource_name)create_windows_printer_port531,16872
-  def delete_windows_printer_port(resource_name)delete_windows_printer_port535,17019
-  def install_windows_font(resource_name)install_windows_font539,17166
-  def create_windows_certificate_binding(resource_name)create_windows_certificate_binding543,17299
-  def delete_windows_certificate_binding(resource_name)delete_windows_certificate_binding547,17460
-  def create_windows_http_acl(resource_name)create_windows_http_acl551,17621
-  def delete_windows_http_acl(resource_name)delete_windows_http_acl555,17760
-
-cookbooks/windows/libraries/windows_privileged.rb,325
-class ChefChef24,864
-  class WindowsPrivilegedWindowsPrivileged25,875
-    def reg_load_key(name, file)reg_load_key27,943
-    def reg_unload_key(name)reg_unload_key43,1335
-    def run(*privileges)run52,1551
-    def adjust_privilege(token, priv, attr = 0)adjust_privilege77,2110
-    def load_depsload_deps89,2428
-
-cookbooks/windows/libraries/powershell_out.rb,350
-  class ChefChef9,186
-    module MixinMixin10,199
-      module PowershellOutPowershellOut11,216
-        def powershell_out(*command_args)powershell_out23,716
-        def powershell_out!(*command_args)powershell_out!32,1119
-        def run_command(script, options)run_command40,1273
-        def build_command(script)build_command69,2106
-
-cookbooks/windows/libraries/wmi_helper.rb,139
-  def execute_wmi_query(wmi_query)execute_wmi_query22,707
-  def wmi_object_property(wmi_object, wmi_property)wmi_object_property29,886
-
-cookbooks/windows/providers/certificate_binding.rb,316
-def whyrun_supported?whyrun_supported?30,937
-def load_current_resourceload_current_resource65,1884
-def getCurrentHashgetCurrentHash80,2389
-def setBinding(hash)setBinding97,2891
-def deleteBindingdeleteBinding108,3199
-def checkHash(hash)checkHash112,3332
-def getHashFromSubjectgetHashFromSubject121,3631
-
-cookbooks/windows/providers/zipfile.rb,70
-def ensure_rubyzip_gem_installedensure_rubyzip_gem_installed83,3100
-
-cookbooks/windows/providers/pagefile.rb,603
-def exists?(pagefile)exists?80,2040
-def max_and_min_set?(pagefile, min, max)max_and_min_set?87,2298
-def create(pagefile)create94,2606
-def delete(pagefile)delete100,2802
-def automatic_managed?automatic_managed?106,3006
-def set_automatic_managedset_automatic_managed113,3263
-def unset_automatic_managedunset_automatic_managed119,3492
-def set_custom_size(pagefile, min, max)set_custom_size125,3719
-def set_system_managed(pagefile)set_system_managed131,4024
-def get_setting_id(pagefile)get_setting_id137,4287
-def check_for_errors(stderr)check_for_errors143,4432
-def wmicwmic147,4513
-
-cookbooks/windows/providers/printer_port.rb,251
-def whyrun_supported?whyrun_supported?24,733
-def load_current_resourceload_current_resource48,1201
-def port_exists?(name)port_exists?64,1828
-def create_printer_portcreate_printer_port71,2010
-def delete_printer_portdelete_printer_port91,2759
-
-cookbooks/windows/providers/feature_servermanagercmd.rb,234
-def check_reboot(result, feature)check_reboot29,925
-def install_feature(_name)install_feature40,1478
-def remove_feature(_name)remove_feature44,1661
-def installed?installed?48,1842
-def servermanagercmdservermanagercmd59,2180
-
-cookbooks/windows/providers/shortcut.rb,101
-def load_current_resourceload_current_resource23,702
-def compare_shortcutcompare_shortcut42,1339
-
-cookbooks/windows/providers/font.rb,227
-def load_current_resourceload_current_resource25,738
-def font_exists?font_exists?38,1172
-def get_cookbook_fontget_cookbook_font42,1234
-def del_cookbook_fontdel_cookbook_font59,1744
-def install_fontinstall_font65,1851
-
-cookbooks/windows/providers/auto_run.rb,47
-def whyrun_supported?whyrun_supported?21,709
-
-cookbooks/windows/providers/certificate.rb,301
-def whyrun_supported?whyrun_supported?29,851
-def load_current_resourceload_current_resource102,2925
-def cert_script(persist)cert_script121,3953
-def cert_exists_script(hash)cert_exists_script136,4669
-def within_store_scriptwithin_store_script143,4800
-def acl_script(hash)acl_script153,5172
-
-cookbooks/windows/providers/feature_dism.rb,238
-def install_feature(_name)install_feature27,819
-def remove_feature(_name)remove_feature33,1141
-def delete_feature(_name)delete_feature37,1304
-def installed?installed?45,1666
-def available?available?57,2274
-def dismdism68,2640
-
-cookbooks/windows/providers/task.rb,791
-def load_current_resourceload_current_resource154,5133
-def run_schtasks(task_action, options = {})run_schtasks176,5997
-def task_need_update?task_need_update?188,6417
-def set_cwd(folder)set_cwd194,6642
-def load_task_hash(task_name)load_task_hash234,7868
-def validate_user_and_passwordvalidate_user_and_password258,8560
-def validate_interactive_settingvalidate_interactive_setting266,8790
-def validate_create_dayvalidate_create_day272,9021
-def validate_create_monthsvalidate_create_months287,9654
-def validate_idle_timevalidate_idle_time302,10297
-def validate_create_frequency_modifiervalidate_create_frequency_modifier309,10581
-def use_password?use_password?338,12390
-def scheduleschedule342,12483
-def frequency_modifier_allowedfrequency_modifier_allowed353,12633
-
-cookbooks/windows/providers/feature_powershell.rb,325
-def install_feature_cmdletinstall_feature_cmdlet13,235
-def remove_feature_cmdletremove_feature_cmdlet17,377
-def install_feature(_name)install_feature21,495
-def remove_feature(_name)remove_feature26,639
-def delete_feature(_name)delete_feature31,781
-def installed?installed?36,931
-def available?available?43,1155
-
-cookbooks/windows/providers/printer.rb,237
-def whyrun_supported?whyrun_supported?24,728
-def load_current_resourceload_current_resource48,1186
-def printer_exists?(name)printer_exists?62,1647
-def create_printercreate_printer68,1843
-def delete_printerdelete_printer93,2688
-
-cookbooks/windows/providers/path.rb,0
-
-cookbooks/windows/providers/http_acl.rb,201
-def whyrun_supported?whyrun_supported?29,891
-def load_current_resourceload_current_resource64,1672
-def getCurrentAclgetCurrentAcl74,1896
-def setAclsetAcl87,2229
-def deleteAcldeleteAcl91,2345
-
-cookbooks/windows/resources/feature.rb,118
-def initialize(name, run_context = nil)initialize30,941
-def locate_default_providerlocate_default_provider37,1067
-
-cookbooks/windows/resources/certificate_binding.rb,0
-
-cookbooks/windows/resources/zipfile.rb,0
-
-cookbooks/windows/resources/pagefile.rb,0
-
-cookbooks/windows/resources/printer_port.rb,0
-
-cookbooks/windows/resources/shortcut.rb,0
-
-cookbooks/windows/resources/font.rb,0
-
-cookbooks/windows/resources/auto_run.rb,0
-
-cookbooks/windows/resources/certificate.rb,0
-
-cookbooks/windows/resources/task.rb,0
-
-cookbooks/windows/resources/printer.rb,0
-
-cookbooks/windows/resources/path.rb,0
-
-cookbooks/windows/resources/http_acl.rb,0
-
-cookbooks/windows/attributes/default.rb,0
-
-cookbooks/windows/recipes/default.rb,0
-
-cookbooks/yum/libraries/matchers.rb,431
-  def create_yum_repository(resource_name)create_yum_repository2,22
-  def add_yum_repository(resource_name)add_yum_repository6,157
-  def delete_yum_repository(resource_name)delete_yum_repository10,286
-  def remove_yum_repository(resource_name)remove_yum_repository14,421
-  def create_yum_globalconfig(resource_name)create_yum_globalconfig18,556
-  def delete_yum_globalconfig(resource_name)delete_yum_globalconfig22,695
-
-cookbooks/yum/providers/repository.rb,47
-def whyrun_supported?whyrun_supported?23,705
-
-cookbooks/yum/providers/globalconfig.rb,47
-def whyrun_supported?whyrun_supported?23,705
-
-cookbooks/yum/resources/repository.rb,0
-
-cookbooks/yum/resources/globalconfig.rb,0
-
-cookbooks/yum/attributes/main.rb,0
-
-cookbooks/yum/recipes/dnf_yum_compat.rb,0
-
-cookbooks/yum/recipes/default.rb,0
-
-cookbooks/dmg/libraries/matchers.rb,58
-  def install_dmg_package(app)install_dmg_package21,672
-
-cookbooks/dmg/providers/package.rb,89
-def load_current_resourceload_current_resource24,726
-def installed?installed?85,3310
-
-cookbooks/dmg/resources/package.rb,59
-def initialize(name, run_context = nil)initialize36,1436
-
-cookbooks/dmg/attributes/default.rb,0
-
-cookbooks/dmg/recipes/default.rb,0
-
-cookbooks/compat_resource/libraries/autoload.rb,74
-    module ChefCompatChefCompat24,1977
-      module MixinMixin26,2031
-
-cookbooks/compat_resource/files/lib/compat_resource.rb,290
-  class ChefChef11,221
-    class ResourceResource12,234
-      def self.property(args, &block)property13,253
-      def self.resource_name(args, &block)resource_name17,330
-      def self.action(args, &block)action21,412
-      def self.raise_chef_11_errorraise_chef_11_error25,487
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/delayed_evaluator.rb,253
-class ChefChef14,306
-module CopiedFromChefCopiedFromChef16,337
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef34,1043
-  class DelayedEvaluator < (defined?(::Chef::DelayedEvaluator) ? ::Chef::DelayedEvaluator : Proc)DelayedEvaluator35,1093
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/resource/yum_repository.rb,366
-class ChefChef14,312
-module CopiedFromChefCopiedFromChef16,343
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef37,1100
-  class Resource < (defined?(::Chef::Resource) ? ::Chef::Resource : Object)Resource38,1150
-    class YumRepository < (defined?(::Chef::Resource::YumRepository) ? ::Chef::Resource::YumRepository : Chef::Resource)YumRepository39,1226
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/resource/apt_repository.rb,366
-class ChefChef14,312
-module CopiedFromChefCopiedFromChef16,343
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef37,1100
-  class Resource < (defined?(::Chef::Resource) ? ::Chef::Resource : Object)Resource38,1150
-    class AptRepository < (defined?(::Chef::Resource::AptRepository) ? ::Chef::Resource::AptRepository : Chef::Resource)AptRepository39,1226
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/resource/action_class.rb,573
-class ChefChef14,310
-module CopiedFromChefCopiedFromChef16,341
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef37,1106
-  class Resource < (defined?(::Chef::Resource) ? ::Chef::Resource : Object)Resource38,1156
-    module ActionClassActionClass39,1232
-      def to_sto_s43,1408
-      def whyrun_supported?whyrun_supported?47,1529
-      def load_current_resourceload_current_resource54,1666
-      def self.included(other)included86,3042
-      module ClassMethodsClassMethods92,3194
-        def to_sto_s101,3603
-        def inspectinspect105,3679
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/resource/apt_update.rb,350
-class ChefChef14,308
-module CopiedFromChefCopiedFromChef16,339
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef37,1096
-  class Resource < (defined?(::Chef::Resource) ? ::Chef::Resource : Object)Resource38,1146
-    class AptUpdate < (defined?(::Chef::Resource::AptUpdate) ? ::Chef::Resource::AptUpdate : Chef::Resource)AptUpdate39,1222
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/provider/yum_repository.rb,563
-class ChefChef14,312
-module CopiedFromChefCopiedFromChef16,343
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef39,1223
-  class Provider < (defined?(::Chef::Provider) ? ::Chef::Provider : Object)Provider40,1273
-    class YumRepository < (defined?(::Chef::Provider::YumRepository) ? ::Chef::Provider::YumRepository : Chef::Provider)YumRepository41,1349
-      def whyrun_supported?; true; endwhyrun_supported?50,1596
-      def load_current_resource; endload_current_resource52,1636
-      def template_available?(path)template_available?126,4797
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/provider/apt_repository.rb,1287
-class ChefChef14,312
-module CopiedFromChefCopiedFromChef16,343
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef39,1223
-  class Provider < (defined?(::Chef::Provider) ? ::Chef::Provider : Object)Provider40,1273
-    class AptRepository < (defined?(::Chef::Provider::AptRepository) ? ::Chef::Provider::AptRepository : Chef::Provider)AptRepository41,1349
-      def whyrun_supported?whyrun_supported?51,1637
-      def load_current_resourceload_current_resource55,1689
-      def is_key_id?(id)is_key_id?122,3805
-      def extract_fingerprints_from_cmd(cmd)extract_fingerprints_from_cmd127,3945
-      def key_is_valid?(cmd, key)key_is_valid?137,4217
-      def cookbook_namecookbook_name154,4641
-      def has_cookbook_file?(fn)has_cookbook_file?158,4736
-      def no_new_keys?(file)no_new_keys?162,4850
-      def install_key_from_uriinstall_key_from_uri168,5119
-      def install_key_from_keyserver(key = new_resource.key, keyserver = new_resource.keyserver)install_key_from_keyserver198,6222
-      def install_ppa_key(owner, repo)install_ppa_key225,7264
-      def is_ppa_url?(url)is_ppa_url?233,7650
-      def make_ppa_url(ppa)make_ppa_url237,7720
-      def build_repo(uri, distribution, components, trusted, arch, add_src = false)build_repo246,7962
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/provider/noop.rb,572
-class ChefChef14,302
-module CopiedFromChefCopiedFromChef16,333
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef35,1036
-  class Provider < (defined?(::Chef::Provider) ? ::Chef::Provider : Object)Provider36,1086
-    class Noop < (defined?(::Chef::Provider::Noop) ? ::Chef::Provider::Noop : Chef::Provider)Noop37,1162
-      def load_current_resource; endload_current_resource38,1256
-      def respond_to_missing?(method_sym, include_private = false)respond_to_missing?40,1294
-      def method_missing(method_sym, *arguments, &block)method_missing44,1428
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/provider/apt_update.rb,554
-class ChefChef14,308
-module CopiedFromChefCopiedFromChef16,339
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef38,1154
-  class Provider < (defined?(::Chef::Provider) ? ::Chef::Provider : Object)Provider39,1204
-    class AptUpdate < (defined?(::Chef::Provider::AptUpdate) ? ::Chef::Provider::AptUpdate : Chef::Provider)AptUpdate40,1280
-      def whyrun_supported?whyrun_supported?52,1602
-      def load_current_resourceload_current_resource56,1654
-      def apt_up_to_date?apt_up_to_date?78,2101
-      def do_updatedo_update83,2296
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/mixin/lazy_module_include.rb,343
-class ChefChef14,314
-module CopiedFromChefCopiedFromChef16,345
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef34,1012
-  module MixinMixin35,1062
-    module LazyModuleIncludeLazyModuleInclude61,1611
-      def included(klass)included67,2022
-      def descendantsdescendants81,2403
-      def include(*classes)include85,2464
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/mixin/params_validate.rb,1644
-class ChefChef14,310
-module CopiedFromChefCopiedFromChef16,341
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef38,1215
-  module MixinMixin39,1265
-    module ParamsValidateParamsValidate41,1366
-      def validate(opts, map)validate100,5018
-      def lazy(&block)lazy134,6221
-      def set_or_return(symbol, value, validation)set_or_return138,6292
-      def explicitly_allows_nil?(key, validation)explicitly_allows_nil?145,6475
-      def _pv_opts_lookup(opts, key)_pv_opts_lookup150,6706
-      def _pv_required(opts, key, is_required = true, explicitly_allows_nil = false)_pv_required161,6978
-      def _pv_equal_to(opts, key, to_be)_pv_equal_to181,7790
-      def _pv_kind_of(opts, key, to_be)_pv_kind_of200,8419
-      def _pv_respond_to(opts, key, method_name_list)_pv_respond_to217,8983
-      def _pv_cannot_be(opts, key, predicate_method_base_name)_pv_cannot_be246,9954
-      def _pv_default(opts, key, default_value)_pv_default287,11169
-      def _pv_regex(opts, key, regex)_pv_regex308,11766
-      def _pv_callbacks(opts, key, callbacks)_pv_callbacks330,12564
-      def _pv_name_property(opts, key, is_name_property = true)_pv_name_property350,13191
-      def _pv_is(opts, key, to_be, raise_error: true)_pv_is417,15111
-      def _pv_coerce(opts, key, coercer)_pv_coerce467,16926
-      class SetOrReturnProperty < (defined?(::Chef::Mixin::ParamsValidate::SetOrReturnProperty) ? ::Chef::Mixin::ParamsValidate::SetOrReturnProperty : Chef::Property)SetOrReturnProperty486,17920
-        def get(resource, nil_set: false)get487,18087
-        def call(resource, value = NOT_PASSED)call496,18316
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/mixin/powershell_out.rb,511
-class ChefChef14,309
-module CopiedFromChefCopiedFromChef16,340
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef34,1009
-  module MixinMixin35,1059
-    module PowershellOutPowershellOut37,1160
-      def powershell_out(*command_args)powershell_out49,1767
-      def powershell_out!(*command_args)powershell_out!62,2250
-      def run_command_with_os_architecture(script, options)run_command_with_os_architecture77,2758
-      def build_powershell_command(script)build_powershell_command94,3276
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/mixin/properties.rb,832
-class ChefChef14,305
-module CopiedFromChefCopiedFromChef16,336
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef21,540
-  module MixinMixin22,590
-    module PropertiesProperties24,691
-      module ClassMethodsClassMethods26,825
-        def properties(include_superclass = true)properties39,1442
-        def property(name, type = NOT_PASSED, **options)property117,5855
-        def property_type(**options)property_type165,7512
-        def lazy(&block)lazy176,7831
-        def state_properties(*names)state_properties209,9310
-        def identity_properties(*names)identity_properties258,11194
-        def included(other)included287,12217
-      def self.included(other)included292,12304
-      def property_is_set?(name)property_is_set?305,12671
-      def reset_property(name)reset_property318,13101
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/mixin/notifying_block.rb,348
-class ChefChef14,310
-module CopiedFromChefCopiedFromChef16,341
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef34,1053
-  module MixinMixin35,1103
-    module NotifyingBlockNotifyingBlock37,1204
-      def notifying_block(&block)notifying_block40,1351
-      def subcontext_block(parent_context = nil, &block)subcontext_block54,1782
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/provider.rb,888
-class ChefChef14,297
-module CopiedFromChefCopiedFromChef16,328
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef18,403
-  class Provider < (defined?(::Chef::Provider) ? ::Chef::Provider : Object)Provider19,453
-    def initialize(new_resource, run_context)initialize22,583
-    def converge_if_changed(*properties, &converge_block)converge_if_changed34,936
-    def self.include_resource_dsl(include_resource_dsl)include_resource_dsl85,3368
-    def self.include_resource_dsl_module(resource)include_resource_dsl_module88,3483
-    def self.use_inline_resourcesuse_inline_resources123,5163
-    module InlineResourcesInlineResources127,5278
-      def compile_and_converge_action(&block)compile_and_converge_action129,5433
-      module ClassMethodsClassMethods141,5871
-        def action(name, &block)action143,6055
-              def action_#{name}action_149,6367
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/constants.rb,206
-class ChefChef14,298
-module CopiedFromChefCopiedFromChef16,329
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef34,1035
-  def NOT_PASSED.to_sto_s36,1111
-  def NOT_PASSED.inspectinspect40,1157
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/resource.rb,1622
-class ChefChef14,297
-module CopiedFromChefCopiedFromChef16,328
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef21,588
-  class Resource < (defined?(::Chef::Resource) ? ::Chef::Resource : Object)Resource22,638
-    def initialize(name, run_context = nil)initialize25,860
-    def action(arg = nil)action54,1857
-    class UnresolvedSubscribes < (defined?(::Chef::Resource::UnresolvedSubscribes) ? ::Chef::Resource::UnresolvedSubscribes : self)UnresolvedSubscribes69,2213
-    def state_for_resource_reporterstate_for_resource_reporter73,2425
-    def identityidentity84,2833
-    def resource_initializing=(value)resource_initializing=94,3160
-    def to_hashto_hash101,3338
-    def self.identity_property(name = nil)identity_property115,3803
-    def allowed_actions(value = NOT_PASSED)allowed_actions123,4177
-    def resource_nameresource_name129,4328
-    def self.use_automatic_resource_nameuse_automatic_resource_name132,4407
-    def self.allowed_actions(*actions)allowed_actions136,4563
-    def self.allowed_actions=(value)allowed_actions145,4820
-    def self.default_action(action_name = NOT_PASSED)default_action148,4901
-    def self.default_action=(action_name)default_action162,5300
-    def self.action(action, &recipe_block)action165,5383
-    def self.load_current_value(&load_block)load_current_value172,5647
-    def current_value_does_not_exist!current_value_does_not_exist!175,5755
-    def self.action_class(&block)action_class178,5856
-    def self.declare_action_class(&block)declare_action_class186,6184
-    module DeprecatedLWRPClassDeprecatedLWRPClass207,7121
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/property.rb,1933
-class ChefChef14,297
-module CopiedFromChefCopiedFromChef16,328
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef37,1093
-  class Property < (defined?(::Chef::Property) ? ::Chef::Property : Object)Property52,1656
-    def self.derive(**options)derive63,2042
-    def initialize(**options)initialize105,4481
-    def to_sto_s147,6619
-    def namename156,6817
-    def declared_indeclared_in165,6946
-    def instance_variable_nameinstance_variable_name176,7137
-    def defaultdefault192,7559
-    def identity?identity?203,7834
-    def desired_state?desired_state?214,8010
-    def name_property?name_property?224,8213
-    def has_default?has_default?233,8366
-    def required?required?242,8537
-    def sensitive?sensitive?253,8711
-    def validation_optionsvalidation_options262,8903
-    def call(resource, value = NOT_PASSED)call288,9901
-    def get(resource, nil_set: false)get342,12325
-    def set(resource, value)set416,15008
-    def is_set?(resource)is_set?437,15781
-    def reset(resource)reset447,16069
-    def coerce(resource, value)coerce468,16707
-    def validate(resource, value)validate491,17416
-    def derive(**modified_options)derive512,18131
-    def emit_dslemit_dsl530,18864
-    def explicitly_accepts_nil?(resource)explicitly_accepts_nil?604,21928
-    def get_value(resource)get_value610,22148
-    def set_value(resource, value)set_value619,22348
-    def value_is_set?(resource)value_is_set?628,22569
-    def reset_value(resource)reset_value637,22763
-    def exec_in_resource(resource, proc, *args)exec_in_resource649,23084
-    def input_to_stored_value(resource, value, is_default: false)input_to_stored_value662,23519
-    def stored_value_to_output(resource, value, is_default: false)stored_value_to_output669,23736
-    def coerce_and_validate(resource, value, is_default: false)coerce_and_validate681,24240
-    def nillable?nillable?706,25395
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/dsl/universal.rb,194
-class ChefChef14,302
-module CopiedFromChefCopiedFromChef16,333
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef39,1235
-  module DSLDSL40,1285
-    module UniversalUniversal60,2453
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/dsl/recipe.rb,221
-class ChefChef14,299
-module CopiedFromChefCopiedFromChef16,330
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef19,475
-  module DSLDSL20,525
-    module RecipeRecipe22,620
-      module FullDSLFullDSL26,812
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/dsl/platform_introspection.rb,1567
-class ChefChef14,315
-module CopiedFromChefCopiedFromChef16,346
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef35,1052
-  module DSLDSL36,1102
-    module PlatformIntrospectionPlatformIntrospection42,1335
-      class PlatformDependentValue < (defined?(::Chef::DSL::PlatformIntrospection::PlatformDependentValue) ? ::Chef::DSL::PlatformIntrospection::PlatformDependentValue : Object)PlatformDependentValue46,1570
-        def initialize(platform_hash)initialize64,2643
-        def value_for_node(node)value_for_node70,2869
-        def match_versions(node)match_versions89,3576
-        def set(platforms, value)set127,5514
-        def normalize_keys(hash)normalize_keys137,5844
-        def assert_valid_platform_values!(platforms, value)assert_valid_platform_values!147,6087
-      def value_for_platform(platform_hash)value_for_platform165,6857
-      def platform?(*args)platform?178,7378
-      class PlatformFamilyDependentValue < (defined?(::Chef::DSL::PlatformIntrospection::PlatformFamilyDependentValue) ? ::Chef::DSL::PlatformIntrospection::PlatformFamilyDependentValue : Object)PlatformFamilyDependentValue189,7663
-        def initialize(platform_family_hash)initialize208,8759
-        def value_for_node(node)value_for_node215,9056
-        def set(platform_family, value)set230,9428
-      def value_for_platform_family(platform_family_hash)value_for_platform_family249,10142
-      def platform_family?(*args)platform_family?262,10748
-      def docker?(node = run_context.nil? ? nil : run_context.node)docker?277,11320
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/dsl/core.rb,184
-class ChefChef14,297
-module CopiedFromChefCopiedFromChef16,328
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef41,1353
-  module DSLDSL42,1403
-    module CoreCore62,2571
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/dsl/declare_resource.rb,1235
-class ChefChef14,309
-module CopiedFromChefCopiedFromChef16,340
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef37,1091
-  module DSLDSL38,1141
-    module DeclareResourceDeclareResource40,1236
-      def with_run_context(rc)with_run_context59,2009
-      def delete_resource!(type, name, run_context: self.run_context)delete_resource!90,3179
-      def delete_resource(type, name, run_context: self.run_context)delete_resource114,4335
-      def edit_resource!(type, name, created_at = nil, run_context: self.run_context, &resource_attrs_block)edit_resource!137,5410
-      def edit_resource(type, name, created_at = nil, run_context: self.run_context, &resource_attrs_block)edit_resource166,6923
-      def find_resource!(type, name, run_context: self.run_context)find_resource!185,7989
-      def find_resource(type, name, created_at: nil, run_context: self.run_context, &resource_attrs_block)find_resource217,9470
-      def declare_resource(type, name, created_at = nil, run_context: self.run_context, create_if_missing: false, &resource_attrs_block)declare_resource250,11041
-      def build_resource(type, name, created_at = nil, run_context: self.run_context, &resource_attrs_block)build_resource286,12798
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef/chef/resource_builder.rb,849
-class ChefChef14,305
-module CopiedFromChefCopiedFromChef16,336
-class Chef < (defined?(::Chef) ? ::Chef : Object)Chef37,1153
-  class ResourceBuilder < (defined?(::Chef::ResourceBuilder) ? ::Chef::ResourceBuilder : Object)ResourceBuilder38,1203
-    def initialize(type: nil, name: nil, created_at: nil, params: nil, run_context: nil, cookbook_name: nil, recipe_name: nil, enclosing_provider: nil)initialize50,1607
-    def build(&block)build62,2120
-    def resource_classresource_class116,4033
-    def is_trivial_resource?(resource)is_trivial_resource?123,4331
-    def identicalish_resources?(first, second)identicalish_resources?132,4805
-    def emit_cloned_resource_warningemit_cloned_resource_warning147,5610
-    def emit_harmless_cloning_debugemit_harmless_cloning_debug154,5986
-    def prior_resourceprior_resource158,6174
-
-cookbooks/compat_resource/files/lib/chef_compat/resource/lwrp_base.rb,303
-module ChefCompatChefCompat6,159
-  class Resource < ChefCompat::CopiedFromChef::Chef::ResourceResource7,177
-    class LWRPBase < ChefCompat::ResourceLWRPBase8,239
-        def actions(*action_names)actions18,569
-        def valid_actions(*args)valid_actions29,924
-        def nodenode38,1250
-
-cookbooks/compat_resource/files/lib/chef_compat/mixin/properties.rb,61
-module ChefCompatChefCompat4,98
-  module MixinMixin5,116
-
-cookbooks/compat_resource/files/lib/chef_compat/recipe.rb,76
-module ChefCompatChefCompat4,78
-  class Recipe < Chef::RecipeRecipe5,96
-
-cookbooks/compat_resource/files/lib/chef_compat/resource.rb,385
-module ChefCompatChefCompat11,383
-  class Resource < ChefCompat::CopiedFromChef::Chef::ResourceResource12,401
-    def initialize(*args, &block)initialize13,463
-    def provider(*args, &block)provider22,708
-    def provider=(arg)provider=25,787
-      def self.resource_name(name=Chef::NOT_PASSED)resource_name30,875
-      def self.resource_name=(name)resource_name51,1603
-
-cookbooks/compat_resource/files/lib/chef_compat/property.rb,110
-module ChefCompatChefCompat3,54
-  class Property < ChefCompat::CopiedFromChef::Chef::PropertyProperty4,72
-
-cookbooks/compat_resource/files/lib/chef_compat/monkeypatches/chef.rb,148
-class ChefChef1,0
-  module ChefCompatDeprecationChefCompatDeprecation4,116
-    def log_deprecation(message, location=nil)log_deprecation5,147
-
-cookbooks/compat_resource/files/lib/chef_compat/monkeypatches/chef/resource/lwrp_base.rb,353
-module ChefCompatChefCompat4,76
-  module MonkeypatchesMonkeypatches5,94
-    module ClassClass11,284
-    module ChefChef17,385
-      module ResourceResource18,401
-        module LWRPBaseLWRPBase19,423
-          def build_from_file(cookbook_name, filename, run_context)build_from_file20,447
-                def new(*args, &block)new26,969
-
-cookbooks/compat_resource/files/lib/chef_compat/monkeypatches/chef/mixin/params_validate.rb,224
-  class ChefChef3,99
-    module MixinMixin4,112
-      module ParamsValidateParamsValidate5,129
-        class SetOrReturnProperty < Chef::PropertySetOrReturnProperty6,157
-          def get(resource, *args)get10,435
-
-cookbooks/compat_resource/files/lib/chef_compat/monkeypatches/chef/run_context.rb,2501
-class ChefChef39,1326
-  class RunContextRunContext43,1427
-    def initialize(node, cookbook_collection, events)initialize159,4514
-    def load(run_list_expansion)load183,5138
-    def initialize_child_stateinitialize_child_state191,5393
-    def notifies_before(notification)notifies_before205,5920
-    def notifies_immediately(notification)notifies_immediately217,6426
-    def notifies_delayed(notification)notifies_delayed229,6935
-    def add_delayed_action(notification)add_delayed_action239,7341
-    def before_notifications(resource)before_notifications253,7889
-    def immediate_notifications(resource)immediate_notifications262,8132
-    def delayed_notifications(resource)delayed_notifications272,8398
-    def include_recipe(*recipe_names, current_cookbook: nil)include_recipe289,8901
-    def load_recipe(recipe_name, current_cookbook: nil)load_recipe314,9809
-    def load_recipe_file(recipe_file)load_recipe_file349,11181
-    def resolve_attribute(cookbook_name, attr_file_name)resolve_attribute373,12035
-    def loaded_recipesloaded_recipes395,13027
-    def loaded_attributesloaded_attributes409,13467
-    def loaded_fully_qualified_recipe?(cookbook, recipe)loaded_fully_qualified_recipe?421,13779
-    def loaded_recipe?(recipe)loaded_recipe?433,14165
-    def loaded_recipe(cookbook, recipe)loaded_recipe444,14489
-    def loaded_fully_qualified_attribute?(cookbook, attribute_file)loaded_fully_qualified_attribute?456,14864
-    def loaded_attribute(cookbook, attribute_file)loaded_attribute466,15192
-    def has_template_in_cookbook?(cookbook, template_name)has_template_in_cookbook?483,15690
-    def has_cookbook_file_in_cookbook?(cookbook, cb_file_name)has_cookbook_file_in_cookbook?498,16182
-    def unreachable_cookbook?(cookbook_name)unreachable_cookbook?511,16654
-    def open_stream(name: nil, **options)open_stream527,17239
-    def request_reboot(reboot_info)request_reboot547,17914
-    def cancel_rebootcancel_reboot552,18097
-    def reboot_requested?reboot_requested?557,18232
-    def create_childcreate_child564,18339
-    module DeprecatedDeprecated577,18586
-      def audits=(value)audits=581,18747
-      def immediate_notification_collection=(value)immediate_notification_collection=586,18966
-      def delayed_notification_collection=(value)delayed_notification_collection=591,19266
-    class ChildRunContext < RunContextChildRunContext603,19704
-      def initialize(parent_run_context)initialize634,20474
-
-cookbooks/compat_resource/files/lib/chef_compat/monkeypatches/chef/provider.rb,586
-class Chef::ProviderChef4,59
-  module InlineResourcesInlineResources8,182
-        module MonkeypatchesMonkeypatches21,703
-          module InlineResourcesInlineResources22,732
-            module ClassMethodsClassMethods23,765
-              def action(name, &block)action24,797
-      module ClassMethodsClassMethods33,1110
-class ChefChef41,1239
-  class ProviderProvider42,1250
-    class LWRPBase < ProviderLWRPBase43,1267
-        module InlineResourcesInlineResources45,1332
-          def recipe_eval_with_update_check(&block)recipe_eval_with_update_check49,1691
-
-cookbooks/compat_resource/files/lib/chef_compat/monkeypatches/chef/recipe.rb,401
-class ChefChef33,1111
-  class RecipeRecipe36,1214
-    def self.parse_recipe_name(recipe_name, current_cookbook: nil)parse_recipe_name53,1765
-    def initialize(cookbook_name, recipe_name, run_context)initialize65,2135
-    def nodenode74,2427
-    def resources(*args)resources80,2564
-    def tag(*tags)tag85,2723
-    def tagged?(*tags)tagged?97,3068
-    def untag(*tags)untag111,3404
-
-cookbooks/compat_resource/files/lib/chef_compat/monkeypatches/chef/recipe_hook.rb,95
-class Chef::RecipeChef4,52
-  def self.new(cookbook_name, recipe_name, run_context)new7,206
-
-cookbooks/compat_resource/files/lib/chef_compat/monkeypatches/chef/resource.rb,688
-class ChefChef6,147
-  class ResourceResource7,158
-    class UnresolvedSubscribes < selfUnresolvedSubscribes9,176
-    def subscribes(action, resources, timing = :delayed)subscribes15,363
-    def notifies(action, resource_spec, timing = :delayed)notifies29,780
-    def resolve_notification_referencesresolve_notification_references57,1783
-    def notifies_before(action, resource_spec)notifies_before70,2264
-    def notifies_immediately(action, resource_spec)notifies_immediately75,2428
-    def notifies_delayed(action, resource_spec)notifies_delayed80,2602
-    def current_valuecurrent_value92,2988
-    def resource_initializing=(value)resource_initializing=103,3458
-
-cookbooks/compat_resource/files/lib/chef_compat/monkeypatches/chef/exceptions.rb,327
-class ChefChef3,27
-  class ExceptionsExceptions4,38
-    class CurrentValueDoesNotExist < RuntimeError; end unless defined?(CurrentValueDoesNotExist)CurrentValueDoesNotExist7,211
-    class CannotValidateStaticallyError < RuntimeError; end unless defined?(CannotValidateStaticallyError)CannotValidateStaticallyError8,308
-
-cookbooks/compat_resource/files/lib/chef_compat/monkeypatches/chef/property.rb,100
-  class ChefChef5,197
-    class PropertyProperty6,210
-      def get(resource, *args)get10,443
-
-cookbooks/compat_resource/files/lib/chef_compat/monkeypatches/chef/log.rb,272
-class ChefChef4,66
-  class LogLog5,77
-    def self.caller_locationcaller_location6,89
-  class ChefChef19,638
-    class LogLog20,651
-      module ChefCompatDeprecationChefCompatDeprecation21,665
-        def deprecation(message, location=nil)deprecation22,700
-
-cookbooks/compat_resource/files/lib/chef_compat/monkeypatches/chef/node.rb,104
-class ChefChef1,0
-  class NodeNode2,11
-      def set_cookbook_attributeset_cookbook_attribute4,76
-
-cookbooks/compat_resource/files/lib/chef_compat/monkeypatches/chef/runner.rb,534
-class ChefChef35,1182
-  class RunnerRunner38,1282
-    def initialize(run_context)initialize44,1369
-    def delayed_actionsdelayed_actions48,1443
-    def eventsevents52,1511
-    def run_action(resource, action, notification_type = nil, notifying_resource = nil)run_action58,1649
-    def convergeconverge98,3588
-    def run_delayed_notifications(error = nil)run_delayed_notifications120,4240
-    def run_delayed_notification(notification)run_delayed_notification132,4676
-    def forced_why_runforced_why_run143,5146
-
-cookbooks/compat_resource/files/lib/chef_compat/monkeypatches/chef/resource_collection/resource_set.rb,365
-module ChefCompatChefCompat22,762
-  module MonkeypatchesMonkeypatches23,780
-    module ChefChef24,803
-      module ResourceCollectionResourceCollection25,819
-        module ResourceSetResourceSet26,851
-          module DeleteResourceDeleteResource27,878
-            def delete(key)delete28,910
-class Chef::ResourceCollection::ResourceSetChef45,1439
-
-cookbooks/compat_resource/files/lib/chef_compat/monkeypatches/chef/resource_collection/resource_list.rb,368
-module ChefCompatChefCompat22,762
-  module MonkeypatchesMonkeypatches23,780
-    module ChefChef24,803
-      module ResourceCollectionResourceCollection25,819
-        module ResourceListResourceList26,851
-          module DeleteResourceDeleteResource27,879
-            def delete(key)delete29,959
-class Chef::ResourceCollection::ResourceListChef45,1476
-
-cookbooks/compat_resource/files/lib/chef_compat/monkeypatches/chef/resource_builder.rb,708
-    class ChefChef35,1800
-      class ResourceBuilderResourceBuilder36,1815
-        def initialize(type:nil, name:nil, created_at: nil, params: nil, run_context: nil, cookbook_name: nil, recipe_name: nil, enclosing_provider: nil)initialize48,2190
-        def build(&block)build59,2698
-        def resource_classresource_class113,4787
-        def is_trivial_resource?(resource)is_trivial_resource?120,5109
-        def identicalish_resources?(first, second)identicalish_resources?125,5330
-        def emit_cloned_resource_warningemit_cloned_resource_warning140,6191
-        def emit_harmless_cloning_debugemit_harmless_cloning_debug146,6563
-        def prior_resourceprior_resource150,6763
-
-cookbooks/compat_resource/files/lib/chef_compat/monkeypatches/chef/resource_collection.rb,759
-module ChefCompatChefCompat25,889
-  module MonkeypatchesMonkeypatches26,907
-    module ChefChef27,930
-      module ResourceCollectionResourceCollection28,946
-        module RecursiveNotificationLookupRecursiveNotificationLookup29,978
-          def initialize(run_context = nil)initialize35,1130
-          def lookup_local(key)lookup_local40,1248
-          def find_local(*args)find_local44,1332
-          def lookup(key)lookup48,1416
-          def find(*args)find56,1603
-          def lookup_recursive(rc, key)lookup_recursive66,1809
-          def find_recursive(rc, *args)find_recursive73,2130
-        module DeleteResourcesDeleteResources81,2463
-          def delete(key)delete85,2565
-class Chef::ResourceCollectionChef96,2722
-
-cookbooks/compat_resource/files/lib/chef_compat/copied_from_chef.rb,582
-module ChefCompatChefCompat1,0
-  module CopiedFromChefCopiedFromChef2,18
-    def self.extend_chef_module(chef_module, target)extend_chef_module3,42
-        def self.method_missing(name, *args, &block)method_missing7,188
-        def self.const_missing(name)const_missing10,302
-    class Chef < ::ChefChef18,523
-      class Resource < ::Chef::ResourceResource19,547
-        module ActionClassActionClass20,587
-          def self.use_inline_resourcesuse_inline_resources21,614
-          def self.include_resource_dsl(include_resource_dsl)include_resource_dsl23,668
-
-cookbooks/compat_resource/files/lib/chef_compat/monkeypatches.rb,115
-class ChefChef1,0
-  class RunContextRunContext2,11
-    class ChildRunContext < RunContextChildRunContext3,30
-
-cookbooks/compat_resource/files/lib/chef_upstream_version.rb,41
-        module ChefCompatChefCompat1,0
-
-cookbooks/homebrew/libraries/matchers.rb,620
-  def install_homebrew_package(pkg)install_homebrew_package3,23
-  def upgrade_homebrew_package(pkg)upgrade_homebrew_package7,144
-  def remove_homebrew_package(pkg)remove_homebrew_package11,265
-  def purge_homebrew_package(pkg)purge_homebrew_package15,384
-  def tap_homebrew_tap(tap)tap_homebrew_tap19,501
-  def untap_homebrew_tap(tap)untap_homebrew_tap23,606
-  def cask_homebrew_cask(cask)cask_homebrew_cask27,715
-  def uncask_homebrew_cask(cask)uncask_homebrew_cask31,826
-  def install_homebrew_cask(cask)install_homebrew_cask35,941
-  def uninstall_homebrew_cask(cask)uninstall_homebrew_cask39,1058
-
-cookbooks/homebrew/libraries/homebrew_mixin.rb,339
-class Chef12HomebrewUserChef12HomebrewUser23,853
-module HomebrewHomebrew27,958
-  module MixinMixin29,987
-    def homebrew_ownerhomebrew_owner30,1002
-    def calculate_ownercalculate_owner45,1407
-    def homebrew_owner_attrhomebrew_owner_attr55,1734
-    def sudo_usersudo_user59,1803
-    def current_usercurrent_user63,1853
-
-cookbooks/homebrew/libraries/homebrew_package.rb,789
-  class ChefChef32,1328
-    class ProviderProvider33,1341
-      class PackagePackage34,1360
-        class Homebrew < PackageHomebrew36,1398
-          def load_current_resourceload_current_resource41,1538
-          def install_package(name, _version)install_package49,1836
-          def upgrade_package(name, _version)upgrade_package53,1954
-          def remove_package(name, _version)remove_package57,2049
-          def purge_package(name, version)purge_package62,2246
-          def brew(*args)brew69,2455
-          def current_installed_versioncurrent_installed_version73,2560
-          def candidate_versioncandidate_version78,2743
-          def package_infopackage_info82,2944
-          def get_response_from_command(command)get_response_from_command90,3237
-
-cookbooks/homebrew/providers/tap.rb,55
-def load_current_resourceload_current_resource26,790
-
-cookbooks/homebrew/providers/cask.rb,47
-def whyrun_supported?whyrun_supported?24,691
-
-cookbooks/homebrew/resources/tap.rb,0
-
-cookbooks/homebrew/resources/cask.rb,27
-def casked?casked?12,190
-
-cookbooks/homebrew/attributes/default.rb,0
-
-cookbooks/homebrew/recipes/install_casks.rb,0
-
-cookbooks/homebrew/recipes/default.rb,0
-
-cookbooks/homebrew/recipes/install_taps.rb,0
-
-cookbooks/homebrew/recipes/cask.rb,0
-
-cookbooks/homebrew/recipes/install_formulas.rb,0
-
-cookbooks/readline/metadata.rb,0
-
-cookbooks/readline/attributes/default.rb,0
-
-cookbooks/readline/recipes/default.rb,0
-
-cookbooks/git/libraries/provider_git_client.rb,165
-class ChefChef1,0
-  class ProviderProvider2,11
-    class GitClient < Chef::Provider::LWRPBaseGitClient3,28
-      def whyrun_supported?whyrun_supported?6,103
-
-cookbooks/git/libraries/provider_git_client_package.rb,147
-class ChefChef1,0
-  class ProviderProvider2,11
-    class GitClientGitClient3,28
-      class Package < Chef::Provider::GitClientPackage4,48
-
-cookbooks/git/libraries/provider_git_client_source.rb,145
-class ChefChef1,0
-  class ProviderProvider2,11
-    class GitClientGitClient3,28
-      class Source < Chef::Provider::GitClientSource4,48
-
-cookbooks/git/libraries/provider_git_service_xinetd.rb,165
-class ChefChef1,0
-  class ProviderProvider2,11
-    class GitClient < Chef::Provider::LWRPBaseGitClient3,28
-      def whyrun_supported?whyrun_supported?6,103
-
-cookbooks/git/libraries/provider_git_service.rb,165
-class ChefChef1,0
-  class ProviderProvider2,11
-    class GitClient < Chef::Provider::LWRPBaseGitClient3,28
-      def whyrun_supported?whyrun_supported?6,103
-
-cookbooks/git/libraries/provider_git_client_osx.rb,139
-class ChefChef1,0
-  class ProviderProvider2,11
-    class GitClientGitClient3,28
-      class Osx < Chef::Provider::GitClientOsx4,48
-
-cookbooks/git/libraries/matchers.rb,232
-  def set_git_config(resource_name) # rubocop:disable Style/AccessorMethodNameset_git_config2,22
-  def install_git_client(resource_name)install_git_client6,186
-  def install_git_service(resource_name)install_git_service10,315
-
-cookbooks/git/libraries/z_provider_mapping.rb,0
-
-cookbooks/git/libraries/helpers.rb,590
-module GitCookbookGitCookbook1,0
-  module HelpersHelpers2,19
-    def parsed_package_nameparsed_package_name4,84
-    def parsed_package_versionparsed_package_version12,425
-    def parsed_source_urlparsed_source_url17,552
-    def parsed_source_checksumparsed_source_checksum22,734
-    def parsed_windows_display_nameparsed_windows_display_name28,951
-    def parsed_windows_package_versionparsed_windows_package_version33,1134
-    def parsed_windows_package_urlparsed_windows_package_url38,1286
-    def parsed_windows_package_checksumparsed_windows_package_checksum43,1573
-
-cookbooks/git/libraries/provider_git_client_windows.rb,148
-class ChefChef2,30
-  class ProviderProvider3,41
-    class GitClientGitClient4,58
-      class Windows < Chef::Provider::GitClientWindows5,78
-
-cookbooks/git/libraries/resource_git_service.rb,116
-class ChefChef3,35
-  class ResourceResource4,46
-    class GitService < Chef::Resource::LWRPBaseGitService5,63
-
-cookbooks/git/libraries/resource_git_client.rb,114
-class ChefChef3,35
-  class ResourceResource4,46
-    class GitClient < Chef::Resource::LWRPBaseGitClient5,63
-
-cookbooks/git/providers/config.rb,225
-def whyrun_supported?whyrun_supported?3,22
-def initialize(*args)initialize21,468
-def load_current_resourceload_current_resource27,540
-def config_cmdconfig_cmd32,709
-def cmd_envcmd_env36,768
-def configconfig40,886
-
-cookbooks/git/resources/config.rb,0
-
-cookbooks/git/attributes/default.rb,0
-
-cookbooks/git/recipes/default.rb,0
-
-cookbooks/git/recipes/windows.rb,0
-
-cookbooks/git/recipes/package.rb,0
-
-cookbooks/git/recipes/server.rb,0
-
-cookbooks/git/recipes/source.rb,0
-
-cookbooks/apt/libraries/matchers.rb,406
-  def add_apt_preference(resource_name)add_apt_preference7,83
-  def remove_apt_preference(resource_name)remove_apt_preference11,212
-  def add_apt_repository(resource_name)add_apt_repository19,407
-  def remove_apt_repository(resource_name)remove_apt_repository23,536
-  def update_apt_update(resource_name)update_apt_update31,727
-  def periodic_apt_update(resource_name)periodic_apt_update35,854
-
-cookbooks/apt/libraries/network.rb,70
-  def interface_ipaddress(host, interface)interface_ipaddress21,651
-
-cookbooks/apt/libraries/helpers.rb,179
-module AptApt20,637
-  module HelpersHelpers22,668
-    def apt_installed?apt_installed?26,765
-    def apt_up_to_date?apt_up_to_date?33,913
-    def which(cmd)which45,1253
-
-cookbooks/apt/libraries/apt_update.rb,140
-  class AptUpdate < ChefCompat::ResourceAptUpdate5,143
-    def apt_up_to_date?apt_up_to_date?37,942
-    def do_updatedo_update42,1129
-
-cookbooks/apt/providers/repository.rb,581
-def whyrun_supported?whyrun_supported?22,664
-def install_key_from_keyserver(key, keyserver, key_proxy)install_key_from_keyserver27,731
-def extract_fingerprints_from_cmd(cmd)extract_fingerprints_from_cmd56,1733
-def key_is_valid(cmd, key)key_is_valid67,2113
-def install_key_from_uri(uri)install_key_from_uri86,2552
-def build_repo(uri, distribution, components, trusted, arch, add_deb_src) # rubocop: disable Metrics/ParameterListsbuild_repo125,3817
-def get_ppa_key(ppa_owner, ppa_repo, key_proxy)get_ppa_key138,4407
-def get_ppa_url(ppa, key_proxy)get_ppa_url162,5430
-
-cookbooks/apt/providers/preference.rb,150
-def whyrun_supported?whyrun_supported?22,664
-def build_pref(package_name, pin, pin_priority)build_pref27,734
-def safe_name(name)safe_name31,862
-
-cookbooks/apt/resources/repository.rb,0
-
-cookbooks/apt/resources/preference.rb,0
-
-cookbooks/apt/attributes/default.rb,0
-
-cookbooks/apt/recipes/cacher-client.rb,0
-
-cookbooks/apt/recipes/default.rb,0
-
-cookbooks/apt/recipes/unattended-upgrades.rb,0
-
-cookbooks/apt/recipes/cacher-ng.rb,0
-
-cookbooks/build-essential/libraries/matchers.rb,167
-  def install_xcode_command_line_tools(resource_name)install_xcode_command_line_tools2,22
-  def install_build_essential(resource_name)install_build_essential6,179
-
-cookbooks/build-essential/resources/build_essential.rb,41
-def after_createdafter_created101,3456
-
-cookbooks/build-essential/resources/xcode_command_line_tools.rb,36
-  def installed?installed?53,1977
-
-cookbooks/build-essential/attributes/default.rb,0
-
-cookbooks/build-essential/recipes/default.rb,0
-
-cookbooks/build-essential/recipes/_windows.rb,0
-
-cookbooks/nodejs/libraries/nodejs_helper.rb,384
-module NodeJsNodeJs1,0
-  module HelperHelper2,14
-    def npm_distnpm_dist3,30
-    def npm_list(path = nil, environment = {})npm_list17,549
-    def url_valid?(list, package)url_valid?28,912
-    def version_valid?(list, package, version)version_valid?32,1023
-    def npm_package_installed?(package, version = nil, path = nil, npm_token = nil)npm_package_installed?36,1140
-
-cookbooks/nodejs/libraries/matchers.rb,133
-  def install_nodejs_npm(resource_name)install_nodejs_npm2,22
-  def uninstall_nodejs_npm(resource_name)uninstall_nodejs_npm6,151
-
-cookbooks/nodejs/providers/npm.rb,199
-def npm_env_varsnpm_env_vars27,634
-def package_installed?package_installed?36,891
-def npm_optionsnpm_options40,1055
-def npm_packagenpm_package49,1245
-def initialize(*args)initialize61,1637
-
-cookbooks/nodejs/resources/npm.rb,0
-
-cookbooks/nodejs/attributes/npm.rb,0
-
-cookbooks/nodejs/attributes/default.rb,0
-
-cookbooks/nodejs/attributes/packages.rb,0
-
-cookbooks/nodejs/attributes/repo.rb,0
-
-cookbooks/nodejs/recipes/install.rb,0
-
-cookbooks/nodejs/recipes/npm_packages.rb,0
-
-cookbooks/nodejs/recipes/npm_from_source.rb,0
-
-cookbooks/nodejs/recipes/nodejs_from_source.rb,0
-
-cookbooks/nodejs/recipes/npm.rb,0
-
-cookbooks/nodejs/recipes/default.rb,0
-
-cookbooks/nodejs/recipes/nodejs_from_package.rb,0
-
-cookbooks/nodejs/recipes/nodejs.rb,0
-
-cookbooks/nodejs/recipes/iojs.rb,0
-
-cookbooks/nodejs/recipes/nodejs_from_binary.rb,0
-
-cookbooks/nodejs/recipes/repo.rb,0
-
-cookbooks/mingw/libraries/_helper.rb,203
-module MingwMingw20,635
-  module HelperHelper21,648
-    def win_friendly_path(path)win_friendly_path22,664
-    def archive_name(source)archive_name26,779
-    def tar_name(source)tar_name31,897
-
-cookbooks/mingw/resources/msys2_package.rb,154
-  def msys2_exec(comment, cmd)msys2_exec39,1418
-  def msys2_initmsys2_init49,1648
-  def msys2_do_action(comment, action_cmd)msys2_do_action118,4398
-
-cookbooks/mingw/resources/get.rb,57
-  def mingw_do_action(action_cmd)mingw_do_action29,913
-
-cookbooks/mingw/resources/tdm_gcc.rb,86
-def archive_name(source)archive_name106,3585
-def tar_name(source)tar_name111,3687
-
-cookbooks/mingw/files/default/bash.bat,130
-set HOME=/home/%USERNAME%HOME2,10
-set MSYS2_PATH_TYPE=minimalMSYS2_PATH_TYPE11,225
-set CHERE_INVOKING=1CHERE_INVOKING15,393
-
-cookbooks/mingw/files/default/custom-upgrade.sh,32
-run_pacman() {run_pacman9,284
-
-cookbooks/mingw/files/default/pthread.h,16036
-#define WIN_PTHREADS_HWIN_PTHREADS_H60,2964
-#define __WINPTHREADS_VERSION_MAJOR __WINPTHREADS_VERSION_MAJOR78,3206
-#define __WINPTHREADS_VERSION_MINOR __WINPTHREADS_VERSION_MINOR79,3244
-#define __WINPTHREADS_VERSION_PATCHLEVEL __WINPTHREADS_VERSION_PATCHLEVEL80,3282
-#define __WINPTHREADS_VERSION __WINPTHREADS_VERSION83,3399
-#define WINPTHREAD_API WINPTHREAD_API87,3515
-#define WINPTHREAD_API WINPTHREAD_API89,3566
-#define WINPTHREAD_APIWINPTHREAD_API92,3624
-#define RWLS_PER_THREAD	RWLS_PER_THREAD98,3714
-#define ETIMEDOUT	ETIMEDOUT102,3784
-#define ENOTSUP	ENOTSUP105,3829
-#define EWOULDBLOCK	EWOULDBLOCK108,3877
-#define PTHREAD_CANCEL_DISABLE PTHREAD_CANCEL_DISABLE113,3943
-#define PTHREAD_CANCEL_ENABLE PTHREAD_CANCEL_ENABLE114,3976
-#define PTHREAD_CANCEL_DEFERRED PTHREAD_CANCEL_DEFERRED116,4012
-#define PTHREAD_CANCEL_ASYNCHRONOUS PTHREAD_CANCEL_ASYNCHRONOUS117,4046
-#define PTHREAD_CREATE_JOINABLE PTHREAD_CREATE_JOINABLE119,4088
-#define PTHREAD_CREATE_DETACHED PTHREAD_CREATE_DETACHED120,4122
-#define PTHREAD_EXPLICIT_SCHED PTHREAD_EXPLICIT_SCHED122,4160
-#define PTHREAD_INHERIT_SCHED PTHREAD_INHERIT_SCHED123,4193
-#define PTHREAD_SCOPE_PROCESS PTHREAD_SCOPE_PROCESS125,4229
-#define PTHREAD_SCOPE_SYSTEM PTHREAD_SCOPE_SYSTEM126,4261
-#define PTHREAD_DEFAULT_ATTR PTHREAD_DEFAULT_ATTR128,4296
-#define PTHREAD_CANCELED PTHREAD_CANCELED130,4350
-#define _PTHREAD_NULL_THREAD _PTHREAD_NULL_THREAD132,4409
-#define PTHREAD_ONCE_INIT PTHREAD_ONCE_INIT134,4455
-#define PTHREAD_DESTRUCTOR_ITERATIONS PTHREAD_DESTRUCTOR_ITERATIONS136,4484
-#define PTHREAD_KEYS_MAX PTHREAD_KEYS_MAX137,4526
-#define PTHREAD_MUTEX_NORMAL PTHREAD_MUTEX_NORMAL139,4560
-#define PTHREAD_MUTEX_ERRORCHECK PTHREAD_MUTEX_ERRORCHECK140,4591
-#define PTHREAD_MUTEX_RECURSIVE PTHREAD_MUTEX_RECURSIVE141,4626
-#define PTHREAD_MUTEX_DEFAULT PTHREAD_MUTEX_DEFAULT142,4660
-#define PTHREAD_MUTEX_SHARED PTHREAD_MUTEX_SHARED144,4712
-#define PTHREAD_MUTEX_PRIVATE PTHREAD_MUTEX_PRIVATE145,4743
-#define PTHREAD_PRIO_NONE PTHREAD_PRIO_NONE147,4776
-#define PTHREAD_PRIO_INHERIT PTHREAD_PRIO_INHERIT148,4804
-#define PTHREAD_PRIO_PROTECT PTHREAD_PRIO_PROTECT149,4835
-#define PTHREAD_PRIO_MULT PTHREAD_PRIO_MULT150,4867
-#define PTHREAD_PROCESS_SHARED PTHREAD_PROCESS_SHARED151,4896
-#define PTHREAD_PROCESS_PRIVATE PTHREAD_PROCESS_PRIVATE152,4929
-#define PTHREAD_MUTEX_FAST_NP	PTHREAD_MUTEX_FAST_NP154,4964
-#define PTHREAD_MUTEX_TIMED_NP	PTHREAD_MUTEX_TIMED_NP155,5016
-#define PTHREAD_MUTEX_ADAPTIVE_NP	PTHREAD_MUTEX_ADAPTIVE_NP156,5070
-#define PTHREAD_MUTEX_ERRORCHECK_NP	PTHREAD_MUTEX_ERRORCHECK_NP157,5126
-#define PTHREAD_MUTEX_RECURSIVE_NP	PTHREAD_MUTEX_RECURSIVE_NP158,5187
-#define PTHREAD_BARRIER_SERIAL_THREAD PTHREAD_BARRIER_SERIAL_THREAD165,5510
-#define	MAX_READ_LOCKS	MAX_READ_LOCKS168,5609
-#define pthread_atfork(pthread_atfork171,5692
-#define pthread_mutex_getprioceiling(pthread_mutex_getprioceiling174,5753
-#define pthread_mutex_setprioceiling(pthread_mutex_setprioceiling175,5804
-#define pthread_getcpuclockid(pthread_getcpuclockid176,5855
-#define pthread_attr_getguardsize(pthread_attr_getguardsize177,5899
-#define pthread_attr_setgaurdsize(pthread_attr_setgaurdsize178,5947
-typedef long pthread_once_t;pthread_once_t180,5996
-typedef unsigned pthread_mutexattr_t;pthread_mutexattr_t181,6025
-typedef unsigned pthread_key_t;pthread_key_t182,6063
-typedef void *pthread_barrierattr_t;pthread_barrierattr_t183,6095
-typedef int pthread_condattr_t;pthread_condattr_t184,6132
-typedef int pthread_rwlockattr_t;pthread_rwlockattr_t185,6164
-typedef uintptr_t pthread_t;pthread_t196,6299
-typedef struct _pthread_cleanup _pthread_cleanup;_pthread_cleanup198,6329
-struct _pthread_cleanup_pthread_cleanup199,6379
-    void (*func)(void *);func201,6405
-    void *arg;arg202,6431
-    _pthread_cleanup *next;next203,6446
-#define pthread_cleanup_push(pthread_cleanup_push206,6478
-#define pthread_cleanup_pop(pthread_cleanup_pop214,6780
-#define __need_time_t__need_time_t252,8635
-#define __need_struct_timespec__need_struct_timespec253,8657
-#define _FAKE_TIME_H_SOURCED _FAKE_TIME_H_SOURCED254,8688
-#define SCHED_OTHER SCHED_OTHER263,8916
-#define SCHED_FIFO SCHED_FIFO264,8942
-#define SCHED_RR SCHED_RR265,8968
-#define SCHED_MIN SCHED_MIN266,8994
-#define SCHED_MAX SCHED_MAX267,9030
-struct sched_param {sched_param269,9064
-  int sched_priority;sched_priority270,9085
-typedef struct pthread_attr_t pthread_attr_t;pthread_attr_t281,9404
-struct pthread_attr_tpthread_attr_t282,9450
-    unsigned p_state;p_state284,9474
-    void *stack;stack285,9496
-    size_t s_size;s_size286,9513
-    struct sched_param param;param287,9532
-typedef void	*pthread_spinlock_t;pthread_spinlock_t298,10161
-typedef void	*pthread_mutex_t;pthread_mutex_t299,10195
-typedef void	*pthread_cond_t;pthread_cond_t300,10226
-typedef void	*pthread_rwlock_t;pthread_rwlock_t301,10256
-typedef void	*pthread_barrier_t;pthread_barrier_t302,10288
-#define PTHREAD_MUTEX_NORMAL PTHREAD_MUTEX_NORMAL304,10322
-#define PTHREAD_MUTEX_ERRORCHECK PTHREAD_MUTEX_ERRORCHECK305,10353
-#define PTHREAD_MUTEX_RECURSIVE PTHREAD_MUTEX_RECURSIVE306,10388
-#define GENERIC_INITIALIZER	GENERIC_INITIALIZER308,10423
-#define GENERIC_ERRORCHECK_INITIALIZER	GENERIC_ERRORCHECK_INITIALIZER309,10477
-#define GENERIC_RECURSIVE_INITIALIZER	GENERIC_RECURSIVE_INITIALIZER310,10541
-#define GENERIC_NORMAL_INITIALIZER	GENERIC_NORMAL_INITIALIZER311,10604
-#define PTHREAD_MUTEX_INITIALIZER	PTHREAD_MUTEX_INITIALIZER312,10664
-#define PTHREAD_RECURSIVE_MUTEX_INITIALIZER	PTHREAD_RECURSIVE_MUTEX_INITIALIZER313,10737
-#define PTHREAD_ERRORCHECK_MUTEX_INITIALIZER	PTHREAD_ERRORCHECK_MUTEX_INITIALIZER314,10829
-#define PTHREAD_NORMAL_MUTEX_INITIALIZER	PTHREAD_NORMAL_MUTEX_INITIALIZER315,10923
-#define PTHREAD_DEFAULT_MUTEX_INITIALIZER	PTHREAD_DEFAULT_MUTEX_INITIALIZER316,11009
-#define PTHREAD_COND_INITIALIZER	PTHREAD_COND_INITIALIZER317,11085
-#define PTHREAD_RWLOCK_INITIALIZER	PTHREAD_RWLOCK_INITIALIZER318,11156
-#define PTHREAD_SPINLOCK_INITIALIZER	PTHREAD_SPINLOCK_INITIALIZER319,11231
-typedef int clockid_t;clockid_t416,17552
-#define __clockid_t_defined __clockid_t_defined417,17575
-#define SIG_BLOCK SIG_BLOCK446,19272
-#define SIG_UNBLOCK SIG_UNBLOCK449,19319
-#define SIG_SETMASK SIG_SETMASK452,19368
-#undef _POSIX_THREAD_DESTRUCTOR_ITERATIONS_POSIX_THREAD_DESTRUCTOR_ITERATIONS457,19427
-#define _POSIX_THREAD_DESTRUCTOR_ITERATIONS _POSIX_THREAD_DESTRUCTOR_ITERATIONS458,19470
-#undef _POSIX_THREAD_KEYS_MAX_POSIX_THREAD_KEYS_MAX460,19549
-#define _POSIX_THREAD_KEYS_MAX _POSIX_THREAD_KEYS_MAX461,19579
-#undef PTHREAD_THREADS_MAXPTHREAD_THREADS_MAX463,19645
-#define PTHREAD_THREADS_MAX PTHREAD_THREADS_MAX464,19672
-#undef _POSIX_SEM_NSEMS_MAX_POSIX_SEM_NSEMS_MAX466,19726
-#define _POSIX_SEM_NSEMS_MAX _POSIX_SEM_NSEMS_MAX467,19754
-#undef SEM_NSEMS_MAXSEM_NSEMS_MAX469,19807
-#define SEM_NSEMS_MAX SEM_NSEMS_MAX470,19828
-#define accept(accept474,19951
-#define aio_suspend(aio_suspend475,20015
-#define clock_nanosleep(clock_nanosleep476,20089
-#define close(close477,20171
-#define connect(connect478,20233
-#define creat(creat479,20299
-#define fcntl(fcntl480,20361
-#define fdatasync(fdatasync481,20423
-#define fsync(fsync482,20493
-#define getmsg(getmsg483,20555
-#define getpmsg(getpmsg484,20619
-#define lockf(lockf485,20685
-#define mg_receive(mg_receive486,20747
-#define mg_send(mg_send487,20819
-#define mg_timedreceive(mg_timedreceive488,20885
-#define mg_timessend(mg_timessend489,20967
-#define msgrcv(msgrcv490,21043
-#define msgsnd(msgsnd491,21108
-#define msync(msync492,21172
-#define nanosleep(nanosleep493,21234
-#define open(open494,21304
-#define pause(pause495,21364
-#define poll(poll496,21426
-#define pread(pread497,21486
-#define pselect(pselect498,21548
-#define putmsg(putmsg499,21614
-#define putpmsg(putpmsg500,21678
-#define pwrite(pwrite501,21744
-#define read(read502,21808
-#define readv(readv503,21868
-#define recv(recv504,21930
-#define recvfrom(recvfrom505,21990
-#define recvmsg(recvmsg506,22058
-#define select(select507,22124
-#define sem_timedwait(sem_timedwait508,22188
-#define sem_wait(sem_wait509,22266
-#define send(send510,22334
-#define sendmsg(sendmsg511,22394
-#define sendto(sendto512,22460
-#define sigpause(sigpause513,22524
-#define sigsuspend(sigsuspend514,22592
-#define sigwait(sigwait515,22664
-#define sigwaitinfo(sigwaitinfo516,22730
-#define sleep(sleep517,22804
-#define system(system519,22930
-#define access(access520,22994
-#define asctime(asctime521,23058
-#define catclose(catclose522,23124
-#define catgets(catgets523,23192
-#define catopen(catopen524,23258
-#define closedir(closedir525,23324
-#define closelog(closelog526,23392
-#define ctermid(ctermid527,23460
-#define ctime(ctime528,23526
-#define dbm_close(dbm_close529,23588
-#define dbm_delete(dbm_delete530,23658
-#define dbm_fetch(dbm_fetch531,23730
-#define dbm_nextkey(dbm_nextkey532,23800
-#define dbm_open(dbm_open533,23874
-#define dbm_store(dbm_store534,23942
-#define dlclose(dlclose535,24012
-#define dlopen(dlopen536,24078
-#define endgrent(endgrent537,24142
-#define endhostent(endhostent538,24210
-#define endnetent(endnetent539,24282
-#define endprotoent(endprotoent540,24352
-#define endpwent(endpwent541,24426
-#define endservent(endservent542,24494
-#define endutxent(endutxent543,24566
-#define fclose(fclose544,24636
-#define fflush(fflush545,24700
-#define fgetc(fgetc546,24764
-#define fgetpos(fgetpos547,24826
-#define fgets(fgets548,24892
-#define fgetwc(fgetwc549,24954
-#define fgetws(fgetws550,25018
-#define fmtmsg(fmtmsg551,25082
-#define fopen(fopen552,25146
-#define fpathconf(fpathconf553,25208
-#define fprintf(fprintf554,25278
-#define fputc(fputc555,25344
-#define fputs(fputs556,25406
-#define fputwc(fputwc557,25468
-#define fputws(fputws558,25532
-#define fread(fread559,25596
-#define freopen(freopen560,25658
-#define fscanf(fscanf561,25724
-#define fseek(fseek562,25788
-#define fseeko(fseeko563,25850
-#define fsetpos(fsetpos564,25914
-#define fstat(fstat565,25980
-#define ftell(ftell566,26042
-#define ftello(ftello567,26104
-#define ftw(ftw568,26168
-#define fwprintf(fwprintf569,26226
-#define fwrite(fwrite570,26294
-#define fwscanf(fwscanf571,26358
-#define getaddrinfo(getaddrinfo572,26424
-#define getc(getc573,26498
-#define getc_unlocked(getc_unlocked574,26558
-#define getchar(getchar575,26636
-#define getchar_unlocked(getchar_unlocked576,26702
-#define getcwd(getcwd577,26786
-#define getdate(getdate578,26850
-#define getgrent(getgrent579,26916
-#define getgrgid(getgrgid580,26984
-#define getgrgid_r(getgrgid_r581,27052
-#define gergrnam(gergrnam582,27124
-#define getgrnam_r(getgrnam_r583,27192
-#define gethostbyaddr(gethostbyaddr584,27264
-#define gethostbyname(gethostbyname585,27342
-#define gethostent(gethostent586,27420
-#define gethostid(gethostid587,27492
-#define gethostname(gethostname588,27562
-#define getlogin(getlogin589,27636
-#define getlogin_r(getlogin_r590,27704
-#define getnameinfo(getnameinfo591,27776
-#define getnetbyaddr(getnetbyaddr592,27850
-#define getnetbyname(getnetbyname593,27926
-#define getnetent(getnetent594,28002
-#define getopt(getopt595,28072
-#define getprotobyname(getprotobyname596,28136
-#define getprotobynumber(getprotobynumber597,28216
-#define getprotoent(getprotoent598,28300
-#define getpwent(getpwent599,28374
-#define getpwnam(getpwnam600,28442
-#define getpwnam_r(getpwnam_r601,28510
-#define getpwuid(getpwuid602,28582
-#define getpwuid_r(getpwuid_r603,28650
-#define gets(gets604,28722
-#define getservbyname(getservbyname605,28782
-#define getservbyport(getservbyport606,28860
-#define getservent(getservent607,28938
-#define getutxent(getutxent608,29010
-#define getutxid(getutxid609,29080
-#define getutxline(getutxline610,29148
-#undef getwcgetwc611,29220
-#define getwc(getwc612,29233
-#undef getwchargetwchar613,29295
-#define getwchar(getwchar614,29311
-#define getwd(getwd615,29379
-#define glob(glob616,29441
-#define iconv_close(iconv_close617,29501
-#define iconv_open(iconv_open618,29575
-#define ioctl(ioctl619,29647
-#define link(link620,29709
-#define localtime(localtime621,29769
-#define lseek(lseek622,29839
-#define lstat(lstat623,29901
-#define mkstemp(mkstemp624,29963
-#define nftw(nftw625,30029
-#define opendir(opendir626,30089
-#define openlog(openlog627,30155
-#define pathconf(pathconf628,30221
-#define pclose(pclose629,30289
-#define perror(perror630,30353
-#define popen(popen631,30417
-#define posix_fadvise(posix_fadvise632,30479
-#define posix_fallocate(posix_fallocate633,30557
-#define posix_madvise(posix_madvise634,30639
-#define posix_openpt(posix_openpt635,30717
-#define posix_spawn(posix_spawn636,30793
-#define posix_spawnp(posix_spawnp637,30867
-#define posix_trace_clear(posix_trace_clear638,30943
-#define posix_trace_close(posix_trace_close639,31029
-#define posix_trace_create(posix_trace_create640,31115
-#define posix_trace_create_withlog(posix_trace_create_withlog641,31203
-#define posix_trace_eventtypelist_getne(posix_trace_eventtypelist_getne642,31307
-#define posix_trace_eventtypelist_rewin(posix_trace_eventtypelist_rewin643,31421
-#define posix_trace_flush(posix_trace_flush644,31535
-#define posix_trace_get_attr(posix_trace_get_attr645,31621
-#define posix_trace_get_filter(posix_trace_get_filter646,31713
-#define posix_trace_get_status(posix_trace_get_status647,31809
-#define posix_trace_getnext_event(posix_trace_getnext_event648,31905
-#define posix_trace_open(posix_trace_open649,32007
-#define posix_trace_rewind(posix_trace_rewind650,32091
-#define posix_trace_setfilter(posix_trace_setfilter651,32179
-#define posix_trace_shutdown(posix_trace_shutdown652,32273
-#define posix_trace_timedgetnext_event(posix_trace_timedgetnext_event653,32365
-#define posix_typed_mem_open(posix_typed_mem_open654,32477
-#define printf(printf655,32569
-#define putc(putc656,32633
-#define putc_unlocked(putc_unlocked657,32693
-#define putchar(putchar658,32771
-#define putchar_unlocked(putchar_unlocked659,32837
-#define puts(puts660,32921
-#define pututxline(pututxline661,32981
-#undef putwcputwc662,33053
-#define putwc(putwc663,33066
-#undef putwcharputwchar664,33128
-#define putwchar(putwchar665,33144
-#define readdir(readdir666,33212
-#define readdir_r(readdir_r667,33278
-#define remove(remove668,33348
-#define rename(rename669,33412
-#define rewind(rewind670,33476
-#define rewinddir(rewinddir671,33540
-#define scanf(scanf672,33610
-#define seekdir(seekdir673,33672
-#define semop(semop674,33738
-#define setgrent(setgrent675,33800
-#define sethostent(sethostent676,33868
-#define setnetent(setnetent677,33940
-#define setprotoent(setprotoent678,34010
-#define setpwent(setpwent679,34084
-#define setservent(setservent680,34152
-#define setutxent(setutxent681,34224
-#define stat(stat682,34294
-#define strerror(strerror683,34354
-#define strerror_r(strerror_r684,34422
-#define strftime(strftime685,34494
-#define symlink(symlink686,34562
-#define sync(sync687,34628
-#define syslog(syslog688,34688
-#define tmpfile(tmpfile689,34752
-#define tmpnam(tmpnam690,34818
-#define ttyname(ttyname691,34882
-#define ttyname_r(ttyname_r692,34948
-#define tzset(tzset693,35018
-#define ungetc(ungetc694,35080
-#define ungetwc(ungetwc695,35144
-#define unlink(unlink696,35210
-#define vfprintf(vfprintf697,35274
-#define vfwprintf(vfwprintf698,35342
-#define vprintf(vprintf699,35412
-#define vwprintf(vwprintf700,35478
-#define wcsftime(wcsftime701,35546
-#define wordexp(wordexp702,35614
-#define wprintf(wprintf703,35680
-#define wscanf(wscanf704,35746
-#undef _GTHREAD_USE_MUTEX_INIT_FUNC_GTHREAD_USE_MUTEX_INIT_FUNC711,36043
-#define _GTHREAD_USE_MUTEX_INIT_FUNC _GTHREAD_USE_MUTEX_INIT_FUNC713,36086
-
-cookbooks/mingw/files/default/time.h,3667
-#define _TIME_H_TIME_H33,1397
-#define CLOCKS_PER_SEC	CLOCKS_PER_SEC41,1609
-#define CLK_TCK CLK_TCK42,1650
-#define __need_time_t__need_time_t51,1984
-#define __need_struct_timespec__need_struct_timespec52,2006
-#define __need_NULL__need_NULL58,2181
-#define __need_wchar_t__need_wchar_t59,2201
-#define __need_size_t__need_size_t60,2224
-typedef long clock_t;clock_t66,2388
-struct tmtm73,2537
-	int	tm_sec;		/* Seconds: 0-59 (K&R says 0-61?) */tm_sec75,2549
-	int	tm_min;		/* Minutes: 0-59 */tm_min76,2600
-	int	tm_hour;	/* Hours since midnight: 0-23 */tm_hour77,2634
-	int	tm_mday;	/* Day of the month: 1-31 */tm_mday78,2681
-	int	tm_mon;		/* Months *since* january: 0-11 */tm_mon79,2724
-	int	tm_year;	/* Years since 1900 */tm_year80,2773
-	int	tm_wday;	/* Days since Sunday (0-6) */tm_wday81,2810
-	int	tm_yday;	/* Days since Jan. 1: 0-365 */tm_yday82,2854
-	int	tm_isdst;	/* +1 Daylight Savings Time, 0 No DST,tm_isdst83,2899
-#define _TM_DEFINED_TM_DEFINED86,2980
-_CRTALIAS time_t	   __cdecl __MINGW_NOTHROW	time (time_t* _v)		  { return(_time64 (_v)); }time149,5752
-_CRTALIAS double	   __cdecl __MINGW_NOTHROW	difftime (time_t _v1, time_t _v2) { return(_difftime64 (_v1,_v2)); }difftime150,5843
-_CRTALIAS time_t	   __cdecl __MINGW_NOTHROW	mktime (struct tm* _v)		  { return(_mktime64 (_v)); }mktime151,5956
-_CRTALIAS time_t	   __cdecl __MINGW_NOTHROW	_mkgmtime (struct tm* _v)	  { return(_mkgmtime64 (_v)); }_mkgmtime152,6054
-_CRTALIAS char*		   __cdecl __MINGW_NOTHROW	ctime (const time_t* _v)	  { return(_ctime64 (_v)); }ctime153,6156
-_CRTALIAS struct tm*	   __cdecl __MINGW_NOTHROW	gmtime (const time_t* _v)	  { return(_gmtime64 (_v)); }gmtime154,6254
-_CRTALIAS struct tm*	   __cdecl __MINGW_NOTHROW	localtime (const time_t* _v)	  { return(_localtime64 (_v)); }localtime155,6358
-_CRTALIAS time_t	   __cdecl __MINGW_NOTHROW	time (time_t* _v)		  { return(_time32 (_v)); }time157,6474
-_CRTALIAS double	   __cdecl __MINGW_NOTHROW	difftime (time_t _v1, time_t _v2) { return(_difftime32 (_v1,_v2)); }difftime158,6565
-_CRTALIAS time_t	   __cdecl __MINGW_NOTHROW	mktime (struct tm* _v)		  { return(_mktime32 (_v)); }mktime159,6678
-_CRTALIAS time_t	   __cdecl __MINGW_NOTHROW	_mkgmtime (struct tm* _v)	  { return(_mkgmtime32 (_v)); }_mkgmtime160,6776
-_CRTALIAS char*		   __cdecl __MINGW_NOTHROW	ctime (const time_t* _v)	  { return(_ctime32 (_v)); }ctime161,6878
-_CRTALIAS struct tm*	   __cdecl __MINGW_NOTHROW	gmtime (const time_t* _v)	  { return(_gmtime32 (_v)); }gmtime162,6976
-_CRTALIAS struct tm*	   __cdecl __MINGW_NOTHROW	localtime (const time_t* _v)	  { return(_localtime32 (_v)); }localtime163,7080
-__MINGW_IMPORT int	_daylight;_daylight179,7771
-__MINGW_IMPORT long	_timezone;_timezone180,7801
-__MINGW_IMPORT char 	*_tzname[2];_tzname181,7832
-#define _daylight	_daylight191,8033
-#define _timezone	_timezone192,8074
-#define _tzname	_tzname193,8115
-__MINGW_IMPORT int	_daylight_dll;_daylight_dll197,8184
-__MINGW_IMPORT long	_timezone_dll;_timezone_dll198,8218
-__MINGW_IMPORT char*	_tzname[2];_tzname199,8253
-#define _daylight	_daylight201,8287
-#define _timezone	_timezone202,8319
-__MINGW_IMPORT int	daylight;daylight213,8543
-__MINGW_IMPORT long	timezone;timezone214,8572
-__MINGW_IMPORT char 	*tzname[2];tzname215,8602
-#define daylight daylight223,8812
-__MINGW_IMPORT char 	*tzname[2];tzname229,9022
-_CRTALIAS wchar_t* __cdecl __MINGW_NOTHROW	_wctime (const time_t* _v) { return(_wctime64 (_v)); }_wctime250,9774
-_CRTALIAS wchar_t* __cdecl __MINGW_NOTHROW	_wctime (const time_t* _v) { return(_wctime32 (_v)); }_wctime252,9878
-#define _WTIME_DEFINED_WTIME_DEFINED258,10182
-
-cookbooks/mingw/files/default/custom_prefix.sh,0
-
-cookbooks/mingw/recipes/default.rb,0
-
-cookbooks/ark/libraries/resource_deprecations.rb,443
-module ArkArk1,0
-  class ResourceDeprecationsResourceDeprecations2,11
-    def self.on(resource)on3,40
-    def initialize(resource)initialize7,104
-    def warningswarnings13,196
-    def applicable_deprecrationsapplicable_deprecrations17,282
-    def deprecationsdeprecations21,385
-    def strip_leading_dir_featurestrip_leading_dir_feature25,486
-    def strip_leading_dir_feature_messagestrip_leading_dir_feature_message29,586
-
-cookbooks/ark/libraries/resource_defaults.rb,1014
-module ArkArk1,0
-  class ResourceDefaultsResourceDefaults2,11
-    def extensionextension3,36
-    def prefix_binprefix_bin7,139
-    def prefix_rootprefix_root11,232
-    def home_dirhome_dir15,328
-    def versionversion24,592
-    def pathpath28,659
-    def windows?windows?36,835
-    def path_without_versionpath_without_version40,919
-    def release_filerelease_file45,1079
-    def release_file_without_versionrelease_file_without_version50,1248
-    def initialize(resource)initialize55,1413
-    def generate_extension_from_url(url)generate_extension_from_url63,1518
-    def prefix_bin_from_node_in_run_contextprefix_bin_from_node_in_run_context76,2202
-    def prefix_root_from_node_in_run_contextprefix_root_from_node_in_run_context80,2302
-    def prefix_home_from_node_in_run_contextprefix_home_from_node_in_run_context84,2404
-    def default_versiondefault_version88,2506
-    def file_cache_pathfile_cache_path92,2549
-    def node_in_run_contextnode_in_run_context96,2619
-
-cookbooks/ark/libraries/unzip_command_builder.rb,337
-module ArkArk1,0
-  class UnzipCommandBuilderUnzipCommandBuilder2,11
-    def unpackunpack3,39
-    def dumpdump11,226
-    def cherry_pickcherry_pick15,325
-    def initialize(resource)initialize26,783
-    def unzip_with_strip_componentsunzip_with_strip_components34,888
-    def make_temp_directorymake_temp_directory43,1197
-
-cookbooks/ark/libraries/default.rb,730
-module ArkArk10,315
-  module ProviderHelpersProviderHelpers11,326
-    def deprecationsdeprecations34,1085
-    def show_deprecationsshow_deprecations38,1166
-    def defaultsdefaults42,1280
-    def set_pathsset_paths46,1377
-    def set_put_pathsset_put_paths62,2007
-    def set_dump_pathsset_dump_paths72,2393
-    def unpack_commandunpack_command77,2547
-    def dump_commanddump_command81,2612
-    def cherry_pick_commandcherry_pick_command85,2673
-    def unzip_commandunzip_command89,2748
-    def owner_commandowner_command93,2812
-    def archive_applicationarchive_application99,2908
-    def archive_builder_klassarchive_builder_klass103,3016
-    def owner_builder_klassowner_builder_klass108,3221
-
-cookbooks/ark/libraries/matchers.rb,567
-  def install_ark(resource_name)install_ark5,55
-  def dump_ark(resource_name)dump_ark9,170
-  def cherry_pick_ark(resource_name)cherry_pick_ark13,279
-  def put_ark(resource_name)put_ark17,402
-  def install_with_make_ark(resource_name)install_with_make_ark21,509
-  def configure_ark(resource_name)configure_ark25,644
-  def setup_py_build_ark(resource_name)setup_py_build_ark29,763
-  def setup_py_install_ark(resource_name)setup_py_install_ark33,892
-  def setup_py_ark(resource_name)setup_py_ark37,1025
-  def unzip_ark(resource_name)unzip_ark41,1142
-
-cookbooks/ark/libraries/platform_specific_builders.rb,396
-module ArkArk1,0
-  module PlatformSpecificBuildersPlatformSpecificBuilders2,11
-    def generates_archive_commands_for(_name, options)generates_archive_commands_for3,45
-    def archive_command_generatorsarchive_command_generators9,242
-    def generates_owner_commands_for(_name, options)generates_owner_commands_for13,327
-    def owner_command_generatorsowner_command_generators19,520
-
-cookbooks/ark/libraries/windows_owner.rb,133
-module ArkArk1,0
-  class WindowsOwnerWindowsOwner2,11
-    def initialize(resource)initialize3,32
-    def commandcommand9,124
-
-cookbooks/ark/libraries/sevenzip_command_builder.rb,496
-module ArkArk1,0
-  class SevenZipCommandBuilderSevenZipCommandBuilder2,11
-    def unpackunpack3,42
-    def dumpdump7,89
-    def cherry_pickcherry_pick11,162
-    def initialize(resource)initialize15,270
-    def sevenzip_commandsevenzip_command23,375
-    def sevenzip_binarysevenzip_binary42,940
-    def sevenzip_command_builder(dir, command)sevenzip_command_builder46,1019
-    def extension_is_tarextension_is_tar50,1178
-    def make_temp_directorymake_temp_directory58,1364
-
-cookbooks/ark/libraries/general_owner.rb,133
-module ArkArk1,0
-  class GeneralOwnerGeneralOwner2,11
-    def initialize(resource)initialize3,32
-    def commandcommand9,124
-
-cookbooks/ark/libraries/tar_command_builder.rb,388
-module ArkArk1,0
-  class TarCommandBuilderTarCommandBuilder2,11
-    def unpackunpack3,37
-    def dumpdump7,129
-    def cherry_pickcherry_pick11,221
-    def initialize(resource)initialize15,358
-    def nodenode23,463
-    def tar_binarytar_binary27,517
-    def argsargs31,591
-    def strip_argsstrip_args41,851
-    def unsupported_extensionunsupported_extension45,973
-
-cookbooks/ark/providers/default.rb,0
-
-cookbooks/ark/resources/default.rb,0
-
-cookbooks/ark/attributes/default.rb,0
-
-cookbooks/ark/recipes/default.rb,0
-
-cookbooks/rbenv/libraries/chef_rbenv_script_helpers.rb,372
-class ChefChef22,698
-  module RbenvRbenv23,709
-    module ScriptHelpersScriptHelpers24,724
-      def rbenv_rootrbenv_root25,749
-      def user_homeuser_home35,985
-      def which_rbenvwhich_rbenv41,1105
-      def current_global_versioncurrent_global_version45,1183
-      def wrap_shim_cmd(cmd)wrap_shim_cmd51,1356
-      def set_updatedset_updated59,1640
-
-cookbooks/rbenv/libraries/chef_rbenv_recipe_helpers.rb,548
-class ChefChef22,703
-  module RbenvRbenv23,714
-    module RecipeHelpersRecipeHelpers24,729
-      def build_upgrade_strategy(strategy)build_upgrade_strategy25,754
-      def mac_with_no_homebrewmac_with_no_homebrew33,915
-      def install_rbenv_pkg_prereqsinstall_rbenv_pkg_prereqs39,1110
-      def install_or_upgrade_rbenv(opts = {})install_or_upgrade_rbenv49,1363
-      def git_deploy_rbenv(opts)git_deploy_rbenv57,1521
-      def initialize_rbenv(opts)initialize_rbenv74,1969
-      def add_rbenv_to_PATHadd_rbenv_to_PATH93,2553
-
-cookbooks/rbenv/libraries/matchers.rb,111
-  def install_rbenv_plugin(name)install_rbenv_plugin2,22
-  def run_rbenv_script(name)run_rbenv_script6,137
-
-cookbooks/rbenv/libraries/chef_rbenv_mixin.rb,312
-class ChefChef22,691
-  module RbenvRbenv23,702
-    module MixinMixin24,717
-      module ShellOutShellOut25,734
-        def shell_out!(*command_args)shell_out!26,756
-        def shell_environmentshell_environment33,1010
-      module ResourceStringResourceString42,1208
-        def to_sto_s43,1236
-
-cookbooks/rbenv/libraries/chef_provider_package_rbenvrubygems.rb,797
-class ChefChef22,712
-  module RbenvRbenv23,723
-    module MixinMixin24,738
-      module ShellOutShellOut25,755
-    module ScriptHelpersScriptHelpers30,872
-  class ProviderProvider35,986
-    class PackagePackage36,1003
-      class RbenvRubygems < Chef::Provider::Package::RubygemsRbenvRubygems37,1021
-        class RbenvGemEnvironment < AlternateGemEnvironmentRbenvGemEnvironment39,1084
-          def initialize(gem_binary_location, rbenv_version, rbenv_user = nil)initialize44,1243
-        def initialize(new_resource, run_context=nil)initialize56,1590
-        def install_package(name, version)install_package65,1956
-        def remove_package(name, version)remove_package71,2060
-        def normalize_versionnormalize_version79,2180
-        def rehashrehash85,2354
-
-cookbooks/rbenv/test/unit/fixtures/metadata.rb,0
-
-cookbooks/rbenv/test/unit/fixtures/recipes/rbenv_rehash_full.rb,0
-
-cookbooks/rbenv/test/unit/fixtures/recipes/rbenv_script_defaults.rb,0
-
-cookbooks/rbenv/test/unit/fixtures/recipes/rbenv_script_full.rb,0
-
-cookbooks/rbenv/test/unit/fixtures/recipes/rbenv_global_defaults.rb,0
-
-cookbooks/rbenv/test/unit/fixtures/recipes/rbenv_global_full.rb,0
-
-cookbooks/rbenv/test/unit/fixtures/recipes/rbenv_plugin_defaults.rb,0
-
-cookbooks/rbenv/test/unit/fixtures/recipes/rbenv_rehash_defaults.rb,0
-
-cookbooks/rbenv/test/unit/fixtures/recipes/rbenv_plugin_full.rb,0
-
-cookbooks/rbenv/test/unit/spec_helper.rb,169
-def load_lw_resource(cb, lwrp)load_lw_resource4,49
-def load_lw_provider(cb, lwrp)load_lw_provider15,342
-def class_name_for_lwrp(cb, lwrp)class_name_for_lwrp26,635
-
-cookbooks/rbenv/test/unit/providers/global_spec.rb,0
-
-cookbooks/rbenv/test/unit/providers/script_spec.rb,0
-
-cookbooks/rbenv/test/unit/providers/rehash_spec.rb,0
-
-cookbooks/rbenv/test/unit/providers/plugin_spec.rb,0
-
-cookbooks/rbenv/test/unit/resources/gem_spec.rb,0
-
-cookbooks/rbenv/test/unit/resources/global_spec.rb,0
-
-cookbooks/rbenv/test/unit/resources/script_spec.rb,0
-
-cookbooks/rbenv/test/unit/resources/rehash_spec.rb,0
-
-cookbooks/rbenv/test/unit/resources/plugin_spec.rb,0
-
-cookbooks/rbenv/test/unit/resources/ruby_spec.rb,0
-
-cookbooks/rbenv/metadata.rb,0
-
-cookbooks/rbenv/providers/script.rb,190
-def whyrun_supported?whyrun_supported?22,686
-def run_scriptrun_script34,827
-def build_script_codebuild_script_code53,1564
-def build_script_environmentbuild_script_environment65,1916
-
-cookbooks/rbenv/providers/plugin.rb,156
-def whyrun_supported?whyrun_supported?22,675
-def create_plugins_directorycreate_plugins_directory35,870
-def clone_plugin_repoclone_plugin_repo43,1038
-
-cookbooks/rbenv/providers/global.rb,156
-def whyrun_supported?whyrun_supported?22,685
-def run_scriptrun_script38,951
-def current_global_version_correct?current_global_version_correct?49,1254
-
-cookbooks/rbenv/providers/ruby.rb,320
-def load_current_resourceload_current_resource24,714
-def perform_installperform_install42,1045
-def ruby_installed?ruby_installed?79,2131
-def ruby_build_missing?ruby_build_missing?87,2299
-def install_ruby_dependenciesinstall_ruby_dependencies91,2373
-def ensure_java_environmentensure_java_environment110,2808
-
-cookbooks/rbenv/providers/rehash.rb,80
-def whyrun_supported?whyrun_supported?22,686
-def run_scriptrun_script34,827
-
-cookbooks/rbenv/resources/script.rb,41
-def initialize(*args)initialize38,1332
-
-cookbooks/rbenv/resources/plugin.rb,21
-def to_sto_s11,256
-
-cookbooks/rbenv/resources/global.rb,61
-def initialize(*args)initialize28,858
-def to_sto_s33,913
-
-cookbooks/rbenv/resources/ruby.rb,62
-def initialize(*args)initialize30,951
-def to_sto_s36,1038
-
-cookbooks/rbenv/resources/gem.rb,41
-def initialize(*args)initialize37,1289
-
-cookbooks/rbenv/resources/rehash.rb,40
-def initialize(*args)initialize28,843
-
-cookbooks/rbenv/attributes/default.rb,0
-
-cookbooks/rbenv/recipes/user_install.rb,0
-
-cookbooks/rbenv/recipes/default.rb,31
-class Chef::RecipeChef20,630
-
-cookbooks/rbenv/recipes/vagrant.rb,0
-
-cookbooks/rbenv/recipes/system_install.rb,0
-
-cookbooks/rbenv/recipes/user.rb,0
-
-cookbooks/rbenv/recipes/system.rb,0
-
-cookbooks/seven_zip/libraries/matchers.rb,81
-  def extract_seven_zip_archive(resource_name)extract_seven_zip_archive30,1008
-
-cookbooks/seven_zip/providers/archive.rb,199
-def whyrun_supported?whyrun_supported?27,792
-def seven_zip_exeseven_zip_exe46,1396
-def seven_zip_exe_from_registryseven_zip_exe_from_registry56,1656
-def extract_timeoutextract_timeout66,2028
-
-cookbooks/seven_zip/resources/archive.rb,0
-
-cookbooks/seven_zip/attributes/default.rb,0
-
-cookbooks/seven_zip/recipes/default.rb,0
-
-cookbooks/ruby_build/libraries/ruby_build_recipe_helpers.rb,237
-class ChefChef22,713
-  module RubyBuildRubyBuild23,724
-    module RecipeHelpersRecipeHelpers24,743
-      def build_upgrade_strategy(strategy)build_upgrade_strategy25,768
-      def mac_with_no_homebrewmac_with_no_homebrew33,929
-
-cookbooks/ruby_build/providers/ruby.rb,207
-def load_current_resourceload_current_resource24,710
-def perform_installperform_install42,1124
-def ruby_installed?ruby_installed?72,2053
-def install_ruby_dependenciesinstall_ruby_dependencies80,2200
-
-cookbooks/ruby_build/resources/ruby.rb,0
-
-cookbooks/ruby_build/attributes/default.rb,0
-
-cookbooks/ruby_build/recipes/default.rb,31
-class Chef::RecipeChef20,640
-
-git-hooks/post-receive-deploy,0
-
-test/controllers/files_controller_test.rb,158
-class FilesControllerTest < ActionDispatch::IntegrationTestFilesControllerTest3,23
-  def setupsetup4,83
-  def create_random_filecreate_random_file8,152
-
-test/controllers/welcome_controller_test.rb,89
-class WelcomeControllerTest < ActionDispatch::IntegrationTestWelcomeControllerTest3,23
-
-test/test_helper.rb,123
-class ActiveSupport::TestCaseActiveSupport6,154
-  def generate_temporary_file(data = nil)generate_temporary_file11,344
-
-test/models/se_file_test.rb,82
-class SeFileTest < ActiveSupport::TestCaseSeFileTest3,23
-  def setupsetup4,66
-
-solo.rb,0
-
-db/seeds.rb,0
-
-db/schema.rb,0
-
-db/migrate/20161107043045_add_attachment_attachment_to_se_files.rb,151
-class AddAttachmentAttachmentToSeFiles < ActiveRecord::MigrationAddAttachmentAttachmentToSeFiles1,0
-  def self.upup2,65
-  def self.downdown8,159
-
-db/migrate/20161101063729_add_name_to_se_files.rb,100
-class AddNameToSeFiles < ActiveRecord::Migration[5.0]AddNameToSeFiles1,0
-  def changechange2,54
-
-db/migrate/20161031011537_create_se_files.rb,94
-class CreateSeFiles < ActiveRecord::Migration[5.0]CreateSeFiles1,0
-  def changechange2,51
-
-config/routes.rb,0
-
-config/environment.rb,0
-
-config/environments/development.rb,0
-
-config/environments/production.rb,0
-
-config/environments/test.rb,0
-
-config/deploy/staging.rb,0
-
-config/deploy/production.rb,0
-
-config/deploy.rb,0
-
-config/application.rb,99
-module SeFilesystemSeFilesystem9,192
-  class Application < Rails::ApplicationApplication10,212
-
-config/boot.rb,0
-
-config/puma.rb,0
-
-config/spring.rb,0
-
-config/initializers/inflections.rb,0
-
-config/initializers/session_store.rb,0
-
-config/initializers/backtrace_silencers.rb,0
-
-config/initializers/application_controller_renderer.rb,0
-
-config/initializers/new_framework_defaults.rb,0
-
-config/initializers/filter_parameter_logging.rb,0
-
-config/initializers/assets.rb,0
-
-config/initializers/wrap_parameters.rb,0
-
-config/initializers/cookies_serializer.rb,0
-
-config/initializers/mime_types.rb,0
