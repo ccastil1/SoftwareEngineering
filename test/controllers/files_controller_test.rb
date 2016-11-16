@@ -17,6 +17,13 @@ class FilesControllerTest < ActionDispatch::IntegrationTest
          }
   end
 
+  test 'post empty filename fails' do
+    post file_upload_url,
+         params: {
+           se_file: {name: '', attachment: fixture_file_upload('files/test.txt')}
+         }
+  end
+
   test 'post missing file returns 400' do
     params = {
       se_file: {
