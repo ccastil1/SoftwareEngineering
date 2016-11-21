@@ -25,4 +25,4 @@ production:
   <<: *default
   database: inventory_production
   username: postgres
-  password: postgres
+  password: <%= ENV["DATABASE_PASSWORD"] %>
