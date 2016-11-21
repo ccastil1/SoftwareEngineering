@@ -1,4 +1,8 @@
 langauge: ruby
 rvm:
     - 2.3.1
-before_script: "bundle exec rails db:drop db:create db:migrate"
+before_script: 
+    - psql -c 'create database travis_ci_test;' -U postgres
+    - bundle exec rails db:drop db:create db:migrate
+services:
+    - postgresql

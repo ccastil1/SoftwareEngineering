@@ -26,3 +26,10 @@ production:
   database: inventory_production
   username: ubuntu
   password: <%= ENV["DATABASE_PASSWORD"] %>
+
+test:
+  <<: *default
+  database: travis_ci_test
+  host: localhost
+  username: postgres
+  password: postgres
