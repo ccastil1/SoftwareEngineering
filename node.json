@@ -3,5 +3,10 @@
         "recipe[readline]",
         "recipe[nodejs]",
         "recipe[ruby_build]"
-    ]
+    ],
+    "postgresql": {
+        "password": {
+           "postgres": "postgres"
+        }
+    }
 }
