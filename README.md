@@ -61,3 +61,6 @@ root page at localhost:3000.
     'unix:///home/ubuntu/apps/se_filesystem/shared/tmp/sockets/pumactl.sock' -S
     /home/ubuntu/apps/se_filesystem/shared/tmp/pids/puma.state`
     (Move this into an init script)
+
+Database password needs to be exported to the environment using DATABASE_PASWORD environment variable.
+Password needs to match password for database role.
