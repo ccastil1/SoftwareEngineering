@@ -2,3 +2,6 @@
             <p>File Name: <%= @file.name %></p>
             <p>Date Modified: <%= @file.updated_at %> </p>     
     </div>
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>

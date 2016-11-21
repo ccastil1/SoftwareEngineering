@@ -65,6 +65,6 @@ end
       status_code = 200
     end
 
-    render json: { message: message }, status: status_code
+    # render json: { message: message,  }, status: status_code
   end
 end
