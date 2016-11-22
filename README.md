@@ -1,4 +1,4 @@
-# SoftwareEngineering 
+# SoftwareEngineering
 
 [![Build Status](https://travis-ci.org/ccastil1/SoftwareEngineering.svg?branch=master)](https://travis-ci.org/ccastil1
 /SoftwareEngineering)
@@ -49,11 +49,10 @@ root page at localhost:3000.
 ## Master setup
 * Open up ports 22, 80, and 443 for outside access
 * Clone project repo to home directory of ubuntu user
-* Install ruby, nginx, curl, wget: `sudo apt-get ruby nginx curl wget`
+* Install ruby, nginx, curl, wget: `sudo apt-get ruby nginx curl wget build-essential`
 * Install
     [chef-solo](http://gettingstartedwithchef.com/first-steps-with-chef.html)
 * Install librarian-chef and `librarian-chef install` to download cookbooks
-* `sudo apt-get install sqlite libsqlite3-dev`
 * `sudo chef-solo -c solo.rb -j node.json`
 * Start puma server inside of screen session `bundle exec puma -b
     'unix:///home/ubuntu/apps/se_filesystem/shared/tmp/sockets/puma.sock' -e
