@@ -1,0 +1,2 @@
+class FileNodeFilesController < ApplicationController
+end
