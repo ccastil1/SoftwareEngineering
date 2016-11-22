@@ -29,7 +29,5 @@ production:
 
 test:
   <<: *default
-  database: travis_ci_test
-  host: localhost
-  username: postgres
-  password: postgres
+  adapter: sqlite3
+  database: db/test.sqlite3
