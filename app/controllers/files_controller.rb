@@ -45,9 +45,9 @@ class FilesController < ApplicationController
     render :json => output, :status => statusval
   end
 
-def post_params
-  params.require(:se_file).permit(:name, :attachment)
-end
+  def post_params
+    params.require(:se_file).permit(:name, :attachment)
+  end
 
   def upload
     uploaded_file = SeFile.new post_params

@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   get 'file_node_files/',
       to: 'file_node_files#list',
       as: :file_node_files
+  post 'file_node_files/', to: 'file_node_files#upload', as: :file_node_upload
+  delete 'file_node_files/:name', to: 'file_node_files#remove', as: :file_node_delete
 end

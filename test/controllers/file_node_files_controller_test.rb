@@ -76,4 +76,53 @@ class FileNodeFilesControllerTest < ActionDispatch::IntegrationTest
     assert_response 400
     Rails.env = 'test'
   end
+
+  test 'post file works' do
+    post file_node_upload_url,
+         params: {
+           se_file: {name: 'hi', attachment: fixture_file_upload('files/test.txt')}
+         }
+  end
+
+  test 'post empty filename fails' do
+    post file_node_upload_url,
+         params: {
+           se_file: {name: '', attachment: fixture_file_upload('files/test.txt')}
+         }
+  end
+
+  test 'post missing file returns 400' do
+    params = {
+      se_file: {
+        name: 'testFile.txt'
+      }
+    }
+    post file_node_upload_url, params: params
+    assert_response 400
+  end
+
+  test 'post empty file returns 400' do
+    params = {
+      se_file: {
+        name: 'testFile.txt',
+        attachment: fixture_file_upload('files/empty.txt')
+      }
+    }
+    post file_node_upload_url, params: params
+    assert_response 400
+  end
+
+  test 'delete file works' do
+    file = create_random_file
+    delete file_node_file_url file.name
+    assert_response 200
+    assert_not SeFile.exists?(file.id)
+  end
+
+  test 'delete non-existant file' do
+    filename = 'thisisnotarealfile'
+    delete file_node_file_url filename
+    assert_response 400
+    assert_not SeFile.exists?(name: filename)
+  end
 end
