@@ -27,6 +27,12 @@ production:
   username: ubuntu
   password: <%= ENV["DATABASE_PASSWORD"] %>
 
+file_node:
+  <<: *default
+  database: inventory_production
+  username: ubuntu
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+
 test:
   <<: *default
   adapter: sqlite3

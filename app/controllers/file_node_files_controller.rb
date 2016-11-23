@@ -1,25 +1,31 @@
-class FilesController < ApplicationController
+class FileNodeFilesController < ApplicationController
   protect_from_forgery with: :null_session
   def list
-    @file = SeFile.all
-    render :json => @file
-  end
-
-  def show
-    @file = SeFile.find_by(name: params[:name])
-     if @file.nil?
-      render json: { message: "File #{params[:name]} not found" }, status: 400
-    else
+    if Rails.env.file_node?
+      @file = SeFile.all
       render json: @file
     end
   end
 
+  def show
+    if Rails.env.file_node?
+      @file = SeFile.find_by(name: params[:name])
+      if @file.nil?
+        render json: { message: "File #{params[:name]} not found" }, status: 400
+      else
+        render json: @file
+      end
+    end
+  end
+
   def download
-    file = SeFile.find_by name: params[:name]
-    if file.nil?
-      render json: { message: "File #{params[:name]} not found" }, status: 400
-    else
-      send_file file.attachment.path
+    if Rails.env.file_node?
+      file = SeFile.find_by name: params[:name]
+      if file.nil?
+        render json: { message: "File #{params[:name]} not found" }, status: 400
+      else
+        send_file file.attachment.path
+      end
     end
   end
 

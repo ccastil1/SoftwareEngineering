@@ -2,6 +2,7 @@
 lock '3.6.1'
 
 server '54.218.119.184', port: 22, roles: [:web, :app, :db], primary: true
+server '54.187.136.98', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:ccastil1/SoftwareEngineering.git'
 set :application,     'se_filesystem'
@@ -33,7 +34,7 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 
 ## Linked Files & Directories (Default None):
 # set :linked_files, %w{config/database.yml}
-# set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'

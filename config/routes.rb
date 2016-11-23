@@ -8,4 +8,16 @@ Rails.application.routes.draw do
   post 'files/', to: 'files#upload', as: :file_upload
   get 'files/download/:name', to: 'files#download', as: :file_download
   delete 'files/:name', to: 'files#remove', as: :filedelete
+
+  get 'file_node_files/:name',
+      to: 'file_node_files#show',
+      as: :file_node_file
+  get 'file_node_files/download/:name',
+      to: 'file_node_files#download',
+      as: :file_node_file_download
+  get 'file_node_files/',
+      to: 'file_node_files#list',
+      as: :file_node_files
+  post 'file_node_files/', to: 'file_node_files#upload', as: :file_node_upload
+  delete 'file_node_files/:name', to: 'file_node_files#remove', as: :file_node_delete
 end
