@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   get 'files/download/:name', to: 'files#download', as: :file_download
   delete 'files/:name', to: 'files#remove', as: :filedelete
 
-  get 'file_node_controller/:name',
+  get 'file_node_files/:name',
       to: 'file_node_files#show',
       as: :file_node_file
-  get 'file_node_controller/download/:name',
+  get 'file_node_files/download/:name',
       to: 'file_node_files#download',
       as: :file_node_file_download
   get 'file_node_files/',
