@@ -1,4 +1,5 @@
 class FileNodeFilesController < ApplicationController
+  protect_from_forgery with: :null_session
   def list
     if Rails.env.file_node?
       @file = SeFile.all
