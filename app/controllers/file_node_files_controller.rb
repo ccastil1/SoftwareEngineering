@@ -1,25 +1,31 @@
-class FilesController < ApplicationController
+class FileNodeFilesController < ApplicationController
   protect_from_forgery with: :null_session
   def list
-    @file = SeFile.all
-    render :json => @file
-  end
-
-  def show
-    @file = SeFile.find_by(name: params[:name])
-     if @file.nil?
-      render json: { message: "File #{params[:name]} not found" }, status: 400
-    else
+    if Rails.env.file_node?
+      @file = SeFile.all
       render json: @file
     end
   end
 
+  def show
+    if Rails.env.file_node?
+      @file = SeFile.find_by(name: params[:name])
+      if @file.nil?
+        render json: { message: "File #{params[:name]} not found" }, status: 400
+      else
+        render json: @file
+      end
+    end
+  end
+
   def download
-    file = SeFile.find_by name: params[:name]
-    if file.nil?
-      render json: { message: "File #{params[:name]} not found" }, status: 400
-    else
-      send_file file.attachment.path
+    if Rails.env.file_node?
+      file = SeFile.find_by name: params[:name]
+      if file.nil?
+        render json: { message: "File #{params[:name]} not found" }, status: 400
+      else
+        send_file file.attachment.path
+      end
     end
   end
 
@@ -39,7 +45,6 @@ class FilesController < ApplicationController
 
     successstr = "success: File " + params[:name] + " successfully deleted!"
     statusval = 200
-    
 
     # Respond with success appropriately
     output = { :message => successstr }
@@ -58,19 +63,14 @@ class FilesController < ApplicationController
     if post_params[:attachment].nil? || post_params[:attachment].size.zero?
       status_code = 400
       message = 'Upload failure: File attachment cannot be empty.'
-      redirect_to :back
     elsif post_params[:name].blank?
       status_code = 400
       message = 'Upload failure: Filename cannot be empty.'
-      redirect_to :back
     else
-      # message = "Upload success: File #{file_name} successfully uploaded!"
-      # status_code = 200
-      flash[:success] = "File #{file_name} successfully uploaded!"
-      redirect_to :back
+      message = "Upload success: File #{file_name} successfully uploaded!"
+      status_code = 200
     end
 
-    # render json: { message: message,  }, status: status_code
-    
+    render json: { message: message }, status: status_code
   end
 end
