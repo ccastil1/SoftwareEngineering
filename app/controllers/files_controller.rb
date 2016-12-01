@@ -39,7 +39,6 @@ class FilesController < ApplicationController
 
     successstr = "success: File " + params[:name] + " successfully deleted!"
     statusval = 200
-    
 
     # Respond with success appropriately
     output = { :message => successstr }
@@ -58,19 +57,14 @@ class FilesController < ApplicationController
     if post_params[:attachment].nil? || post_params[:attachment].size.zero?
       status_code = 400
       message = 'Upload failure: File attachment cannot be empty.'
-      redirect_to :back
     elsif post_params[:name].blank?
       status_code = 400
       message = 'Upload failure: Filename cannot be empty.'
-      redirect_to :back
     else
-      # message = "Upload success: File #{file_name} successfully uploaded!"
-      # status_code = 200
-      flash[:success] = "File #{file_name} successfully uploaded!"
-      redirect_to :back
+      message = "Upload success: File #{file_name} successfully uploaded!"
+      status_code = 200
     end
 
-    # render json: { message: message,  }, status: status_code
-    
+    render json: { message: message }, status: status_code
   end
 end
