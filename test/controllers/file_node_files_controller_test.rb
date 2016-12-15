@@ -84,6 +84,16 @@ class FileNodeFilesControllerTest < ActionDispatch::IntegrationTest
          }
   end
 
+  test 'post file shows error when paperclip throws error' do
+    post file_node_upload_url,
+         params: {
+           se_file: {
+             name: 'hi', attachment: fixture_file_upload('files/test.py')
+           }
+         }
+    assert_response 400
+  end
+
   test 'post empty filename fails' do
     post file_node_upload_url,
          params: {
