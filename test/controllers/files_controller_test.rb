@@ -15,6 +15,7 @@ class FilesControllerTest < ActionDispatch::IntegrationTest
          params: {
            se_file: {name: 'hi', attachment: fixture_file_upload('files/test.txt')}
          }
+    assert JSON.parse(response.body)["message"] == "Upload success: File hi successfully uploaded!"
   end
 
   test 'post file shows error when paperclip throws error' do

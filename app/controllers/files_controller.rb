@@ -60,7 +60,7 @@ class FilesController < ApplicationController
     elsif post_params[:name].blank?
       status_code = 400
       message = 'Upload failure: Filename cannot be empty.'
-    elsif !uploaded_file.errors.nil?
+    elsif !uploaded_file.errors.empty?
       status_code = 400
       message = uploaded_file.errors.full_messages
     else
