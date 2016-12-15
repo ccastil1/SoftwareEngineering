@@ -6,8 +6,16 @@ Vagrant.configure('2') do |config|
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
 
-  config.vm.box = 'ubuntu/xenial64'
-  config.vm.network 'forwarded_port', guest: 3000, host: 3000
+  config.vm.define "master" do |master|
+    master.vm.box = "ubuntu/xenial64"
+    master.vm.network 'forwarded_port', guest: 3000, host: 3000
+  end
+
+  config.vm.define "file_node" do |file_node|
+    file_node.vm.box = "ubuntu/xenial64"
+    file_node.vm.network 'forwarded_port', guest: 3001, host: 3001
+  end
+
 
   config.vm.synced_folder '.', '/home/ubuntu/se_filesystem'
 
