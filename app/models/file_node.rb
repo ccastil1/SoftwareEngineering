@@ -1,0 +1,2 @@
+class FileNode < ApplicationRecord
+end
