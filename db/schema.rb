@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161215032507) do
+ActiveRecord::Schema.define(version: 20161215033109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20161215032507) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "file_nodes_se_files", id: false, force: :cascade do |t|
+    t.integer "file_node_id"
+    t.integer "se_file_id"
+    t.index ["file_node_id"], name: "index_file_nodes_se_files_on_file_node_id", using: :btree
+    t.index ["se_file_id"], name: "index_file_nodes_se_files_on_se_file_id", using: :btree
   end
 
   create_table "se_files", force: :cascade do |t|
