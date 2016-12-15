@@ -9,11 +9,13 @@ Vagrant.configure('2') do |config|
   config.vm.define "master" do |master|
     master.vm.box = "ubuntu/xenial64"
     master.vm.network 'forwarded_port', guest: 3000, host: 3000
+    master.vm.network 'private_network', ip: '10.10.10.10'
   end
 
   config.vm.define "file_node" do |file_node|
     file_node.vm.box = "ubuntu/xenial64"
     file_node.vm.network 'forwarded_port', guest: 3001, host: 3001
+    file_node.vm.network 'private_network', ip: '10.10.10.11'
   end
 
 
