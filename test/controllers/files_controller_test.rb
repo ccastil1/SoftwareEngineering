@@ -18,6 +18,15 @@ class FilesControllerTest < ActionDispatch::IntegrationTest
     assert JSON.parse(response.body)["message"] == "Upload success: File hi successfully uploaded!"
   end
 
+  test 'post file adds file to all file nodes' do
+    FileNode.all.each { |node| assert node.se_files.length == 0 }
+    post file_upload_url,
+         params: {
+           se_file: {name: 'hi', attachment: fixture_file_upload('files/test.txt')}
+         }
+    FileNode.all.each { |node| assert node.se_files.length == 1 }
+  end
+
   test 'post file shows error when paperclip throws error' do
     post file_upload_url,
          params: {

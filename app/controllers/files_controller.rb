@@ -64,6 +64,7 @@ class FilesController < ApplicationController
       status_code = 400
       message = uploaded_file.errors.full_messages
     else
+      FileNode.all.each { |node| node.se_files.append uploaded_file }
       message = "Upload success: File #{file_name} successfully uploaded!"
       status_code = 200
     end
