@@ -61,5 +61,10 @@ root page at localhost:3000.
     /home/ubuntu/apps/se_filesystem/shared/tmp/pids/puma.state`
     (Move this into an init script)
 
-Database password needs to be exported to the environment using DATABASE_PASWORD environment variable.
-Password needs to match password for database role.
+## Database setup
+* Database password needs to be exported to the environment using DATABASE_PASWORD environment variable.
+* Password needs to match password for database role.
+
+## Selenium Tests
+* See test/selenium/test_readme.txt for more details.
+
