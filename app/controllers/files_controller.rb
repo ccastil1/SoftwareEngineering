@@ -64,6 +64,15 @@ class FilesController < ApplicationController
       status_code = 400
       message = uploaded_file.errors.full_messages
     else
+      FileNode.all.each do |node|
+        url = node.url + '/files'
+        RestClient.post(
+          url,
+          'se_file[name]' => file_name,
+          'se_file[attachment]' => open(uploaded_file.attachment.path)
+        )
+        node.se_files.append uploaded_file
+      end
       message = "Upload success: File #{file_name} successfully uploaded!"
       status_code = 200
     end
