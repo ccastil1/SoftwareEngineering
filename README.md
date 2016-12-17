@@ -61,5 +61,11 @@ root page at localhost:3000.
     /home/ubuntu/apps/se_filesystem/shared/tmp/pids/puma.state`
     (Move this into an init script)
 
+## API
+* POST /file 		- Arguments: File_Name, File_Attachement; Uploads File_Attachment to service with name File_Name
+* GET /files 		- Arguments: N/A; Returns list of files present in service
+* GET /files/file 	- Arguments: N/A; Returns metadata for [file]
+* DELETE /files/file	- Arguments: N/A; Removes [file] from service
+
 Database password needs to be exported to the environment using DATABASE_PASWORD environment variable.
 Password needs to match password for database role.
