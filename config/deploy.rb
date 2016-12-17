@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # config valid only for current version of Capistrano
-=======
-# config valid only for current version of Capistrano
->>>>>>> master
 lock '3.7.0'
 
 # Master
