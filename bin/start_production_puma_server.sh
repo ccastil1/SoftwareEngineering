@@ -7,7 +7,7 @@ usage() {
     cat <<EOF
 usage: ./start_production_puma_server.sh [-he]
 
-    -e  environment (master, file_node)
+    -e  environment (production, file_node)
 EOF
 }
 
