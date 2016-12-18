@@ -2,6 +2,8 @@ require_relative 'site_element.rb'
 	#define new browser
 browser=SiteElement.new("http://54.218.119.184")
 
+browser.filename.send_key("afile.txt")
+browser.filepath.send_keys(Dir.pwd+"/"+"test.txt")
 browser.upload_button.click
 
 begin

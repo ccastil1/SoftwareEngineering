@@ -4,7 +4,7 @@ class SiteElement
 	def initialize(url)
 		@driver=Selenium::WebDriver.for :firefox
 		@driver.manage.timeouts.page_load = 3 # seconds 
-		@driver.manage.window.maximize
+	#	@driver.manage.window.maximize
 		@driver.navigate.to url
 	end
 
@@ -47,6 +47,14 @@ class SiteElement
 
 	def page_source()
 		return @driver.page_source
+	end
+
+	def filename()
+		return @driver.find_element(:id, "se_file_name")
+	end
+
+	def filepath()
+		return @driver.find_element(:id, "se_file_attachment")
 	end
 
 	def close_browser()
