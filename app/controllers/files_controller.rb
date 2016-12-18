@@ -73,6 +73,7 @@ class FilesController < ApplicationController
           url,
           'se_file[name]' => file_name,
           'se_file[attachment]' => open(uploaded_file.attachment.path)
+          system("~/replicateDB.sh")
         )
         node.se_files.append uploaded_file
       end
