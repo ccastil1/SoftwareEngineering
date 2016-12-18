@@ -74,10 +74,10 @@
     <% @files.each do |file| %>
     
     <tr>
-        <td><%= link_to file.name, welcome_show_url(file) %></td>
-        <td><%= file.updated_at %></td>
-        <td><%= link_to 'Download', file_download_url(:name => file.name) , :method => :get, :popup => true, :target => '_blank' %></td>
-        <td><%= link_to 'Delete', filedelete_url(:name => file.name) , :method => :delete, :popup => true, :target => '_blank' %></td>      
+        <td id="fileName" ><%= link_to file.name, welcome_show_url(file) %></td>
+        <td id="timeStamp" ><%= file.updated_at %></td>
+        <td id="downloadLink" ><%= link_to 'Download', file_download_url(:name => file.name) , :method => :get, :popup => true, :target => '_blank' %></td>
+        <td id="deleteLink" ><%= link_to 'Delete', filedelete_url(:name => file.name) , :method => :delete, :popup => true, :target => '_blank' %></td>      
     </tr>
     <% end %>
 
