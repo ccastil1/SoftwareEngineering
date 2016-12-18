@@ -8,7 +8,7 @@ Vagrant.configure('2') do |config|
 
   config.vm.define "master" do |master|
     master.vm.box = "ubuntu/xenial64"
-    master.vm.network 'forwarded_port', guest: 3000, host: 3000
+    master.vm.network 'forwarded_port', guest: 3002, host: 3002
     master.vm.network 'private_network', ip: '10.10.10.10'
   end
 
