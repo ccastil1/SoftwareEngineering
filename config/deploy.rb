@@ -9,6 +9,8 @@ server '54.213.130.187', port: 22, roles: [:web, :app, :db], primary: true
 server '54.187.136.98', port: 22, roles: [:web, :app, :db], primary: true
 # File node 2
 server '54.244.101.38', port: 22, roles: [:web, :app, :db], primary: true
+# File node 3
+server '54.214.229.133', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:ccastil1/SoftwareEngineering.git'
 set :application,     'se_filesystem'

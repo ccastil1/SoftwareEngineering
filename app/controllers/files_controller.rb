@@ -41,6 +41,7 @@ class FilesController < ApplicationController
     statusval = 200
 
     # Respond with success appropriately
+    system("~/SoftwareEngineering/bin/replicateDB.sh")
     output = { :message => successstr }
     render :json => output, :status => statusval
   end
@@ -75,6 +76,7 @@ class FilesController < ApplicationController
       end
       message = "Upload success: File #{file_name} successfully uploaded!"
       status_code = 200
+      system("~/SoftwareEngineering/bin/replicateDB.sh")
     end
 
     render json: { message: message }, status: status_code
