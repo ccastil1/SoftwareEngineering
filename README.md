@@ -66,6 +66,7 @@ root page at localhost:3000.
 * GET /files 		- Arguments: N/A; Returns list of files present in service
 * GET /files/file 	- Arguments: N/A; Returns metadata for [file]
 * DELETE /files/file	- Arguments: N/A; Removes [file] from service
+* GET /files/download/file	- Arguments: N/A; Initiates download of [file]
 
 Database password needs to be exported to the environment using DATABASE_PASWORD environment variable.
 Password needs to match password for database role.
