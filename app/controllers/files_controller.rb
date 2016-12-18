@@ -19,7 +19,9 @@ class FilesController < ApplicationController
     if file.nil?
       render json: { message: "File #{params[:name]} not found" }, status: 400
     else
-      send_file file.attachment.path
+      node = FileNode.all.sample
+      redirect_to "http://#{node.url}/file_node_files/download/#{file.name}"
+      status_code = 200
     end
   end
 
