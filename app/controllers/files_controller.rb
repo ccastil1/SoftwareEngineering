@@ -20,7 +20,7 @@ class FilesController < ApplicationController
       render json: { message: "File #{params[:name]} not found" }, status: 400
     else
       node = FileNode.all.sample
-      redirect_to "http://#{node.url}/file_node_files/download/#{file.name}"
+      redirect_to "#{node.url}/file_node_files/download/#{file.name}"
       status_code = 200
     end
   end
