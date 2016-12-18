@@ -35,6 +35,11 @@ class SiteElement
 		return @driver.find_element(:id, "upload_submit")
 	end
 
+	def file_row()
+		# Use headerRow as placeholder for now
+		return @driver.find_element(:id, "headerRow")
+	end
+
 	def close_browser()
 		@driver.quit
 	end
